@@ -1,11 +1,11 @@
 cask 'xquartz' do
-  version '2.7.9'
-  sha256 'f1a8c055e37f6c508ec471dd94d0aadc0fc69601cbbc97abe78abbb2dbee2f5c'
+  version '2.7.11'
+  sha256 '32e50e8f1e21542b847041711039fa78d44febfed466f834a9281c44d75cd6c3'
 
   # bintray.com/xquartz was verified as official when first introduced to the cask
   url "https://dl.bintray.com/xquartz/downloads/XQuartz-#{version}.dmg"
   appcast 'https://www.xquartz.org/releases/sparkle/release.xml',
-          checkpoint: '74e4ffc811e99d388086551e256abc9259b9200d23a90eb380811516ae6f501a'
+          checkpoint: 'da07c258696e2593cbf3f6a451e7125db17a1d70f4f3135e617ba247cdb27a54'
   name 'XQuartz'
   homepage 'https://www.xquartz.org/'
 
