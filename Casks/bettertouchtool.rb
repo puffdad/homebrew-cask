@@ -7,17 +7,17 @@ cask 'bettertouchtool' do
     url "https://bettertouchtool.net/btt#{version}.zip"
 
   else
-    version '1.93'
-    sha256 '4be6a1449df24e8751f3a3a4b8b13a9215905abd47ee4eaa1b02e6e563f22b77'
+    version '1.963'
+    sha256 '3f417bd4a6666ed7299230bb1f38c36d0402305c205543c0cc38d76217479220'
 
     url "https://boastr.net/releases/btt#{version}.zip"
     appcast 'http://appcast.boastr.net',
-            checkpoint: 'df6443a5e3285a68a7aba41851eaf5d6237a4f65a8508d81ffebe715715c4674'
+            checkpoint: 'a0456c391f5c6c6e89804b7ee0a39ad5686f7c89a6b479ee50965b9d1c8a0abf'
 
   end
 
   name 'BetterTouchTool'
-  homepage 'https://boastr.net/'
+  homepage 'https://www.boastr.net/'
 
   auto_updates true
   accessibility_access true

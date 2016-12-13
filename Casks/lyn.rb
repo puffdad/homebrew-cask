@@ -1,10 +1,10 @@
 cask 'lyn' do
-  version '1.8.1'
-  sha256 '0785459c5777793c5e3808dca15240a1afc3e86cfd37dd73119121e85d43b636'
+  version '1.8.3'
+  sha256 'f76ec277f153766b3be787e3a2a7d355f593cbf9f95653e31b974b36a6d4033e'
 
   url "http://www.lynapp.com/downloads/Lyn-#{version}.dmg"
   appcast 'http://www.lynapp.com/lyn/update.xml',
-          checkpoint: '0a0b302988f4dae1ad0914a561deb127b9f036c3c424f213e5b9fd8e35e4fd0c'
+          checkpoint: '893d026155f21ace185be5b8672cac5a66a3db45d43f861a3e2bfd70a5215c20'
   name 'Lyn'
   homepage 'http://www.lynapp.com/'
 

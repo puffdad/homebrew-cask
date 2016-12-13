@@ -15,16 +15,24 @@ cask 'xquartz' do
     Pathname.new(File.expand_path('~')).join('Library', 'Logs').mkpath
 
     # Set default path to X11 to avoid the need of manual setup
-    system '/usr/bin/defaults', 'write', 'com.apple.applescript', 'ApplicationMap', '-dict-add', 'X11', 'file://localhost/Applications/Utilities/XQuartz.app/'
+    system_command '/usr/bin/defaults', args: ['write', 'com.apple.applescript', 'ApplicationMap', '-dict-add', 'X11', 'file://localhost/Applications/Utilities/XQuartz.app/']
 
     # Load & start XServer to avoid the need of relogin
-    system '/bin/launchctl', 'load', '/Library/LaunchAgents/org.macosforge.xquartz.startx.plist'
+    system_command '/bin/launchctl', args: ['load', '/Library/LaunchAgents/org.macosforge.xquartz.startx.plist']
   end
 
   uninstall quit:      'org.macosforge.xquartz.X11',
-            launchctl: 'org.macosforge.xquartz.startx',
+            launchctl: [
+                         'org.macosforge.xquartz.startx',
+                         'org.macosforge.xquartz.privileged_startx',
+                       ],
             pkgutil:   'org.macosforge.xquartz.pkg',
-            delete:    '/opt/X11/'
+            delete:    [
+                         '/opt/X11/',
+                         '/private/etc/manpaths.d/40-XQuartz',
+                         '/private/etc/paths.d/40-XQuartz',
+                         "#{appdir}/XQuartz.app",
+                       ]
 
   zap       delete: [
                       '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.macosforge.xquartz.x11.sfl',

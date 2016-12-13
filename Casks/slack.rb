@@ -1,6 +1,6 @@
 cask 'slack' do
-  version '2.3.0'
-  sha256 '21f8bcef54132e1d67d7e697d9805790f249ef3fe7b3f4f99007d138187d7990'
+  version '2.3.3'
+  sha256 '3dd917164a0a4410b3f10f9c1ea2f1cdd899daa8c33e60fc7ba17095ed2c9b86'
 
   # downloads.slack-edge.com was verified as official when first introduced to the cask
   url "https://downloads.slack-edge.com/mac_releases/Slack-#{version}-macOS.zip"
@@ -19,10 +19,12 @@ cask 'slack' do
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tinyspeck.slackmacgap.sfl',
                 '~/Library/Application Support/Slack',
                 '~/Library/Caches/com.tinyspeck.slackmacgap',
+                '~/Library/Caches/com.tinyspeck.slackmacgap.ShipIt',
                 '~/Library/Containers/com.tinyspeck.slackmacgap',
                 '~/Library/Containers/com.tinyspeck.slackmacgap.SlackCallsService',
                 '~/Library/Cookies/com.tinyspeck.slackmacgap.binarycookies',
                 '~/Library/Preferences/com.tinyspeck.slackmacgap.plist',
+                '~/Library/Preferences/com.tinyspeck.slackmacgap.helper.plist',
                 '~/Library/Saved Application State/com.tinyspeck.slackmacgap.savedState',
               ]
 end
