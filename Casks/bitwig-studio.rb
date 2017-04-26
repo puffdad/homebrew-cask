@@ -1,10 +1,16 @@
 cask 'bitwig-studio' do
-  version '1.3.13'
-  sha256 '1b83cbe5b52b72d39c719491a53ae98857e8d6a14d75dfd3f1c75b173e4b267a'
+  version '2.0'
+  sha256 'e7ca7ddaadf1fda21ea6dcef01afa33c012e5278150b773ee87091ac268f3d6e'
 
   url "https://downloads.bitwig.com/stable/#{version}/Bitwig%20Studio%20#{version}.dmg"
   name 'Bitwig Studio'
-  homepage 'http://www.bitwig.com/'
+  homepage 'https://www.bitwig.com/'
 
   app 'Bitwig Studio.app'
+
+  zap delete: [
+                '~/Library/Application Support/Bitwig',
+                '~/Library/Caches/Bitwig',
+                '~/Library/Logs/Bitwig',
+              ]
 end

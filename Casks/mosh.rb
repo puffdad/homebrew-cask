@@ -1,6 +1,6 @@
 cask 'mosh' do
-  version '1.2.5'
-  sha256 '8a590ba81edd6f706f2d0afe1cb882bd8ff8860e395b7c6ac7285306f4f12209'
+  version '1.3.0'
+  sha256 'a423fcb5aab7079e20b03cfa5e8623bb89391087dd5492d68947c89a39eee80c'
 
   url "https://mosh.org/mosh-#{version}.pkg"
   name 'Mosh'

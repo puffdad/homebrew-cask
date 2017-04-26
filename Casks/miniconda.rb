@@ -10,9 +10,10 @@ cask 'miniconda' do
   depends_on macos: '>= :lion'
   container type: :naked
 
-  installer script: 'Miniconda3-latest-MacOSX-x86_64.sh',
-            args:   ['-b'],
-            sudo:   false
+  installer script: {
+                      executable: 'Miniconda3-latest-MacOSX-x86_64.sh',
+                      args:       ['-b'],
+                    }
 
   uninstall delete: '~/miniconda3'
 

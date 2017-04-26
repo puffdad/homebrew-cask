@@ -1,16 +1,18 @@
 cask 'youku' do
-  if MacOS.version <= :mountain_lion
-    version '1.0.5.5031'
-    sha256 'b7d9ff08bd87150dfa9a52a891d57002e0cbc3f73d181240adfa86a076793d55'
+  if MacOS.version == :mountain_lion
+    version '1.0.6.01094'
+    sha256 'ab17b83f88f1035bda7d20c064bfd59c35925c373aed510f1612f3473ec0c37e'
   else
-    version '1.1.5.10190'
-    sha256 '621ace860acd18512fa34b453bb54be0b0ce9d9d2de8d8aef2d39338fedd9d63'
+    version '1.2.2.04189'
+    sha256 '6fe78dea2f1c292775b1ab5d0eb2102ec2d70eef5f6b6f37d850a08b9ba65e7b'
   end
 
-  url "http://desktop.youku.com/ugc/youkumac_#{version}.dmg"
+  url "http://pcclient.download.youku.com/ikumac/youkumac_#{version}.dmg"
   name 'Youku'
   name '优酷'
-  homepage 'http://pd.youku.com/pc'
+  homepage 'https://pd.youku.com/pc'
+
+  depends_on macos: '>= :mountain_lion'
 
   app '优酷.app'
 

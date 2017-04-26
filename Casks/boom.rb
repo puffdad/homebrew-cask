@@ -1,23 +1,17 @@
 cask 'boom' do
-  version '1.5,1474610397'
-  sha256 '848b4fbe4d20e2f6e2267c75a17a3ceeb481dee79fa08a3021b204e0e62de813'
+  version '1.6,1490693621'
+  sha256 '24b32b7c13988bd5c71d6ff3a91bef2a686e2cff101d2cee739af5737f9644f0'
 
   # devmate.com/com.globaldelight.Boom2 was verified as official when first introduced to the cask
   url "https://dl.devmate.com/com.globaldelight.Boom2/#{version.before_comma}/#{version.after_comma}/Boom2-#{version.before_comma}.dmg"
   appcast 'https://updates.devmate.com/com.globaldelight.Boom2.xml',
-          checkpoint: '8eb9a0a978cd243fb8f0decee2a11eb943c07bf3ccd4d231717e2f15060a02d5'
+          checkpoint: '4f468fa05290cc89e015a6e3310c47f42d56df4ca8cd916045288354568b18bd'
   name 'Boom'
   homepage 'http://www.globaldelight.com/boom'
 
   depends_on macos: '>= :yosemite'
 
   app 'Boom 2.app'
-
-  postflight do
-    system_command "#{appdir}/Boom 2.app/Contents/Resources/Components/Install.sh",
-                   args: ["#{appdir}/Boom 2.app/Contents/Resources/Components/Boom2Device.kext"],
-                   sudo: true
-  end
 
   uninstall kext:      'com.globaldelight.driver.Boom2Device',
             launchctl: [

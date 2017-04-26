@@ -1,11 +1,11 @@
 cask 'avidemux' do
-  version '2.6.15'
-  sha256 'b646cb9ceff19c96e771550ffd070dc8834427755ac962aad90efb11652c4667'
+  version '2.6.19'
+  sha256 '606e239b7833fdb4e86422979189c31942ced034f8d8fd2cde0ee4cff7de13eb'
 
   # sourceforge.net/avidemux was verified as official when first introduced to the cask
   url "https://downloads.sourceforge.net/avidemux/avidemux/#{version}/Avidemux_#{version}_Sierra_64Bits_Qt5.dmg"
   appcast 'https://sourceforge.net/projects/avidemux/rss?path=/avidemux',
-          checkpoint: '37287b61c6efcc8ddea788b23cb0dd53422824ebb2d7d3ea68a386e46170bcc9'
+          checkpoint: '48d5f951633deea796cee416eec784b6f338923abba559a74bed937cca40e5dd'
   name 'Avidemux'
   homepage 'https://www.avidemux.org/'
 

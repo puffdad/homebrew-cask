@@ -1,12 +1,11 @@
 cask 'anylogic' do
-  version '7.3.5'
-  sha256 '190bc6555b637c5ecbf40d1f8b8966d097b1bac10e12dc5eaf01a25af75e3971'
+  version '8.0.5'
+  sha256 'c982048534c3b6bcd99ed5f12a81e570ed133d9acffa22852127d515f9027bff'
 
   url "http://www.anylogic.com/files/anylogic-ple-#{version}.dmg"
   name 'AnyLogic'
-  homepage 'http://www.anylogic.com/'
+  homepage 'https://www.anylogic.com/'
 
-  depends_on arch: :x86_64
   depends_on macos: '>= :lion'
 
   pkg 'Install AnyLogic.pkg'

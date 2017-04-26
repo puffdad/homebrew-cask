@@ -4,6 +4,8 @@ cask 'multimarkdown-composer' do
 
   # files.fletcherpenney.net.s3.amazonaws.com was verified as official when first introduced to the cask
   url "http://files.fletcherpenney.net.s3.amazonaws.com/MultiMarkdown%20Composer-#{version}.zip"
+  appcast 'http://multimarkdown.com/download/',
+          checkpoint: 'a6abaa7faed9adabc0306f9cff4313a2cf42ed0c51482ef2b9b20b6fa0ff068e'
   name 'MultiMarkdown Composer'
   homepage 'http://multimarkdown.com/download/'
 

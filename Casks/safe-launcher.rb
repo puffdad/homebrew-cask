@@ -1,15 +1,15 @@
 cask 'safe-launcher' do
-  version '0.10.0'
-  sha256 '68c4c59f3fa2bd3cbcd51fa109e827ade2fd2227289a46c8df6af487597e378d'
+  version '0.11.0'
+  sha256 '4dd918574e835e32aaeb4a0fc23e2572df8641a432e82e201dd0c0b0c47fba3d'
 
   # github.com/maidsafe/safe_launcher was verified as official when first introduced to the cask
   url "https://github.com/maidsafe/safe_launcher/releases/download/#{version}/safe-launcher-v#{version}-osx-x64.zip"
   appcast 'https://github.com/maidsafe/safe_launcher/releases.atom',
-          checkpoint: '2c16c1dc4b4a623edee889158be53fd2823181bd4d135e1aaac749e90af9f568'
+          checkpoint: '48376dbfa4b984bb2d6cc68d443be9147d1c440664899d8f914d3c6634c9e3dc'
   name 'SAFE Launcher'
   homepage 'https://www.maidsafe.net/'
 
-  app 'SAFE Launcher.app'
+  app "safe-launcher-v#{version}-osx-x64/SAFE Launcher.app"
 
   uninstall pkgutil: 'net.maidsafe.safelauncher',
             delete:  [

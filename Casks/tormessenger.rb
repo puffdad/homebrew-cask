@@ -1,6 +1,6 @@
 cask 'tormessenger' do
-  version '0.3.0b1'
-  sha256 'a0b8968271a82f840104630bc61ad811e755b97afcf1686070c05308ad08f492'
+  version '0.4.0b2'
+  sha256 '7b374ca8fa687b7a59858bf5f17923cbdfaae0d1688856c2b8f75c4b67473514'
 
   url "https://dist.torproject.org/tormessenger/#{version}/TorMessenger-#{version}-osx64_en-US.dmg"
   name 'Tor Messenger'

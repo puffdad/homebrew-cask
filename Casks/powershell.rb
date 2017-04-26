@@ -1,17 +1,17 @@
 cask 'powershell' do
-  version '6.0.0-alpha.13'
-  sha256 '3bcb890d934a41fab1cb67e40e8ed6d58df902cddb420b4e359aa12ce7c85b01'
+  version '6.0.0-alpha.18'
+  sha256 '486be09e5f20fbbbda8a1a35b3959630f805dc3d5ab1c1b77d7af3e2bd234d7b'
 
   # github.com/PowerShell/PowerShell was verified as official when first introduced to the cask
-  url "https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}.pkg"
+  url "https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}-osx.10.11-x64.pkg"
   appcast 'https://github.com/PowerShell/PowerShell/releases.atom',
-          checkpoint: '18014ddba1e858639078352c1a7baeaef742eca4b8cbb72a3e1dcd657e69da01'
+          checkpoint: 'edd757730a98d4e41ea656cfa009ef80b2a3223f13dc745af633e3c850de1c4f'
   name 'PowerShell'
   homepage 'https://msdn.microsoft.com/powershell'
 
   depends_on formula: 'openssl'
 
-  pkg "powershell-#{version}.pkg"
+  pkg "powershell-#{version}-osx.10.11-x64.pkg"
 
   uninstall pkgutil: 'powershell'
 

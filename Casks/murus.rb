@@ -1,12 +1,19 @@
 cask 'murus' do
-  version '1.4.7'
-  sha256 '1e21e9b7cfe4a7c485b9120affe6579c1c7c4c34aa8b616a83e5a3bce48605ae'
+  version '1.4.9'
+  sha256 '32fd8c9b9b5e57aa00f53a9b892cfb7e043f129193d81d02d7a07390c6673ad1'
 
-  url "http://www.murusfirewall.com/downloads/murus-#{version}.zip"
+  url "https://www.murusfirewall.com/downloads/murus-#{version}.zip"
   name 'Murus Firewall'
   homepage 'https://www.murusfirewall.com/'
 
   depends_on macos: '>= :mavericks'
 
   app 'Murus.app'
+
+  zap delete: [
+                '/Library/Application Support/Murus',
+                '/Library/Preferences/it.murus.muruslibrary.plist',
+                '~/Library/Caches/it.murus.Murus',
+                '~/Library/Preferences/it.murus.Murus.plist',
+              ]
 end

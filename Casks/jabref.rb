@@ -1,24 +1,25 @@
 cask 'jabref' do
-  version '3.7'
-  sha256 'd5833d9624c2a6f71a41b56bf82b300a5ee58cefc62dc2c29d6fdbe3ad7029c5'
+  version '3.8.2'
+  sha256 'c3ad1179b926150a7140aceb93bac3222460ec41ab2937b38af17331e4b52988'
 
   # github.com/JabRef/jabref was verified as official when first introduced to the cask
   url "https://github.com/JabRef/jabref/releases/download/v#{version}/JabRef_macos_#{version.dots_to_underscores}.dmg"
   appcast 'https://github.com/JabRef/jabref/releases.atom',
-          checkpoint: 'e9c5d2fa45eb53b586ba0afd00392ba74c09ad8587c70f4588eae82ff35bf9b9'
+          checkpoint: 'd268dfab21a8e70fc8e8e3d99174cbda3ba86b3910f2f3fe76c05f2d37fb6846'
   name 'JabRef'
   homepage 'https://www.jabref.org/'
 
-  installer script: 'JabRef Installer.app/Contents/MacOS/JavaApplicationStub',
-            args:   [
-                      '-q',
-                      '-VcreateDesktopLinkAction$Boolean=false',
-                      '-VaddToDockAction$Boolean=false',
-                      '-VshowFileAction$Boolean=false',
-                      '-Vsys.installationDir=/Applications',
-                      '-VexecutionLauncherAction$Boolean=false',
-                    ],
-            sudo:   false
+  installer script: {
+                      executable: 'JabRef Installer.app/Contents/MacOS/JavaApplicationStub',
+                      args:       [
+                                    '-q',
+                                    '-VcreateDesktopLinkAction$Boolean=false',
+                                    '-VaddToDockAction$Boolean=false',
+                                    '-VshowFileAction$Boolean=false',
+                                    '-Vsys.installationDir=/Applications',
+                                    '-VexecutionLauncherAction$Boolean=false',
+                                  ],
+                    }
 
   uninstall delete: '/Applications/JabRef.app'
 end

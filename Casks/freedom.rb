@@ -1,10 +1,10 @@
 cask 'freedom' do
-  version '1.3.9'
-  sha256 '5f9cc843836a1a6b8063ae2aa3835ba5cf81ec73ca9505d4fdd703f6dafec4c6'
+  version '1.4.6'
+  sha256 'de857dbbcf3f1f65dc8a44380977ed7dc3a7da6bda1e5616f3555767b459384e'
 
   url 'https://cdn.freedom.to/installers/FreedomSetup.dmg'
   appcast 'https://cdn.freedom.to/installers/updates/mac/Appcast.xml',
-          checkpoint: '621cab1cd313191561a457938518d5a0efa9f6b319a4115f66d84cede49bc352'
+          checkpoint: 'd5b94d6d470c8ecc7f77bca718d6641ea5de9188fa4db354bad5fa700e1d7fd5'
   name 'Freedom'
   homepage 'https://freedom.to/'
 

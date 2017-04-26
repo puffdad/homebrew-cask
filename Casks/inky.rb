@@ -1,6 +1,6 @@
 cask 'inky' do
-  version '3.0.7_38'
-  sha256 '04ce74b7c30cd55f22b1a83ce7952605371c6b1a0d197bf328c8a70ef897358e'
+  version '3.3.0_114'
+  sha256 '77627cef367177adbf081a7772863f7b448951261f0036ce759b96526cb70140'
 
   url "https://download.inky.com/InkyInstall_osx_#{version}.dmg"
   name 'Inky'

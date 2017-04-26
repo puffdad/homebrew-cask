@@ -1,11 +1,11 @@
 cask 'tagspaces' do
-  version '2.6.0'
-  sha256 '5eb5d99843bed186b9ba711794376c272922675be647671e9e5f18c82edceb31'
+  version '2.8.0'
+  sha256 '840f76b0429390c5a78600802a4974093e8f137ba9c0acc316e62d74ae92d551'
 
   # github.com/tagspaces/tagspaces was verified as official when first introduced to the cask
   url "https://github.com/tagspaces/tagspaces/releases/download/v#{version}/tagspaces-#{version}-osx64.zip"
   appcast 'https://github.com/tagspaces/tagspaces/releases.atom',
-          checkpoint: 'f2c08de8bc1a32b1617b46e2c88195bd11c984461d3a03c3412df3bffcf047d5'
+          checkpoint: 'e601645ae85002fad000f8cd4295c4a47fe37863cb43a161afc7e8bd41322a7b'
   name 'TagSpaces'
   homepage 'https://www.tagspaces.org/'
 

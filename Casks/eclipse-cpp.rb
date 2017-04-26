@@ -1,13 +1,13 @@
 cask 'eclipse-cpp' do
-  version '4.6.1,neon:1a'
-  sha256 '1f4bcc0e1766b8441a11fc11e5bf8204a715d91dc818bfc481df8dc317a5c18b'
+  version '4.6.3,neon:3'
+  sha256 '60d1aead8f620c0805c678840bf5b9ea08a28c9be96b9012477be741d0b23c13'
 
   url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.after_comma.before_colon}/#{version.after_colon}/eclipse-cpp-#{version.after_comma.before_colon}-#{version.after_colon}-macosx-cocoa-x86_64.tar.gz&r=1"
   name 'Eclipse IDE for C/C++ Developers'
   homepage 'https://eclipse.org/'
 
   depends_on macos: '>= :leopard'
-  depends_on arch: :x86_64
 
-  app 'Eclipse.app'
+  # Renamed to avoid conflict with other Eclipse.
+  app 'Eclipse.app', target: 'Eclipse CPP.app'
 end

@@ -1,14 +1,19 @@
 cask 'lingon-x' do
-  version '4.3'
-  sha256 '96d66d13b4f2461c3bfb4b737f519b9478829d232c2bdc33507bcab407f5b15d'
+  version '5.0'
+  sha256 'b0aa33d90994d3724c60357ad50248f4db25ac8058c5596db390758ec5d3fd17'
 
   url "https://www.peterborgapps.com/downloads/LingonX#{version.major}.zip"
   appcast "https://www.peterborgapps.com/updates/lingonx#{version.major}-appcast.xml",
-          checkpoint: 'a050e6a7fdbe083fd4f8195ccbeed19872e53f90586e96751384dd920ba80e69'
+          checkpoint: 'a2c4b4fce8357186a6ea23b30db9bd75550a00845571808cfb87ed1421857288'
   name 'Lingon X'
   homepage 'https://www.peterborgapps.com/lingon/'
 
-  depends_on macos: '>= :yosemite'
+  depends_on macos: '>= :sierra'
 
   app 'Lingon X.app'
+
+  zap delete: [
+                '~/Library/Application Scripts/com.peterborgapps.LingonX5',
+                '~/Library/Containers/com.peterborgapps.LingonX5',
+              ]
 end

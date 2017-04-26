@@ -10,8 +10,8 @@ cask 'battle-net' do
   end
 
   language 'zh', 'CN' do
-    url 'https://www.battlenet.com.cn/download/getInstaller?os=mac&installer=Battle.net-Setup-zhCN.zip'
-    homepage 'http://www.battlenet.com.cn/zh/'
+    url 'https://www.battle.net/download/getInstallerForGame?os=mac&installer=Battle.net-Setup-zhCN.zip'
+    homepage 'http://www.battle.net/'
 
     installer manual: 'Battle.net-Setup-zhCN.app'
   end
@@ -26,7 +26,8 @@ cask 'battle-net' do
                 '~/Library/Preferences/net.battle.Identity.prefs',
                 '~/Library/Preferences/net.battnet.battle.plist',
                 '/Users/Shared/Battle.net',
-              ]
+              ],
+      rmdir:  '~/Blizzard'
 
   caveats 'If you pick an installation directory other than /Applications when installing this cask, you will need to uninstall it manually'
 end

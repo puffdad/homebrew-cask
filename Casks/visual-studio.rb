@@ -1,6 +1,6 @@
 cask 'visual-studio' do
-  version '2016-11-16-2'
-  sha256 '0a18e2ff4ab91b87b6be8c3fa78fcb0d8a44e6685a96071b9ec09cc5d7028160'
+  version '2017-01-20-1'
+  sha256 '5c33d771e8c43668023d8df2ce31f6977c33b36a38af1c39b68a8b0d2b384a8b'
 
   # xamarin.azureedge.net was verified as official when first introduced to the cask
   url "https://xamarin.azureedge.net/VsMacInstaller/#{version}/VisualStudioforMacPreviewInstaller.dmg"
@@ -10,4 +10,14 @@ cask 'visual-studio' do
   installer manual: 'Install Visual Studio for Mac Preview.app'
 
   uninstall delete: '/Applications/Visual Studio.app'
+
+  zap delete: [
+                '~/Library/VisualStudio',
+                '~/Library/Caches/VisualStudio',
+                '~/Library/Logs/VisualStudio',
+                '~/Library/Preferences/Visual*Studio',
+                '~/Library/Application Support/CrashReporter/VisualStudio*',
+                '/Applications/Xamarin Workbooks.app',
+                '/Applications/Xamarin Profiler.app',
+              ]
 end

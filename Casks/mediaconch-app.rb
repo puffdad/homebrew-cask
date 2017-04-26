@@ -1,10 +1,10 @@
 cask 'mediaconch-app' do
-  version '16.11'
-  sha256 '9cac189b13d85958eb39fed86df531858e6229033426b3d7b5502fe1d8741600'
+  version '17.03'
+  sha256 'bf8205b47a1080d9f1c783fa799c1985d5ebefe6a7de546454fe2ea45be5026b'
 
   url "https://mediaarea.net/download/binary/mediaconch-gui/#{version}/MediaConch_GUI_#{version}_Mac.dmg"
   appcast 'https://github.com/MediaArea/MediaConch_SourceCode/releases.atom',
-          checkpoint: '2a3a15822cda61ed254ed20ee3561ee4d792ad86bff9307a1730af0e41d45fc7'
+          checkpoint: 'c4e4b7dcc0bd670751c50984666d1b3d372192fdcdf7674394616c41b4716846'
   name 'MediaConch'
   homepage 'https://mediaarea.net/MediaConch/'
 

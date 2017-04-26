@@ -1,6 +1,6 @@
 cask 'astroguider' do
-  version '1.5'
-  sha256 '3fcb7ba35131f532db341fc2970512e1b1cdc161228e092de8786299d8b68c9c'
+  version '1.8'
+  sha256 '23a564dad7cfe21ad89f2d34cad80b3771c070fc5048015a44df91765a740b96'
 
   url "http://download.cloudmakers.eu/AstroGuider_#{version}.dmg"
   name 'AstroGuider'

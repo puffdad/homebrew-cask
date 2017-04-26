@@ -1,8 +1,11 @@
 cask 'gogs' do
-  version '0.9.97'
-  sha256 '281f107e5403374702f6080e7395f4728e5b978fc0484565fc46df3d367f8b80'
+  version '0.11.4'
+  sha256 'edcfa64ceec253f1782c52ef0afb2cd60dfa6fd3bbf7716e66ff875d1bd4a44f'
 
-  url "https://cdn.gogs.io/gogs_v#{version}_darwin_amd64.zip"
+  # github.com/gogits/gogs was verified as official when first introduced to the cask
+  url "https://github.com/gogits/gogs/releases/download/v#{version}/darwin_amd64.zip"
+  appcast 'https://github.com/gogits/gogs/releases.atom',
+          checkpoint: '7a50e42ab166717df1960825119a6a75087514ceecfc7671ec87c30106868f91'
   name 'Go Git Service'
   homepage 'https://gogs.io/'
 
@@ -16,6 +19,5 @@ cask 'gogs' do
       #!/bin/sh
       cd '#{staged_path}/gogs' && ./gogs "$@"
     EOS
-    FileUtils.chmod '+x', shimscript
   end
 end

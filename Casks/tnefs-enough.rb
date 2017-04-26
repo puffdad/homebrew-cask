@@ -15,12 +15,14 @@ cask 'tnefs-enough' do
 
     url "http://www.joshjacob.com/mac-development/TNEF#{version}.dmg"
   else
-    version '3.6'
-    sha256 '75063d28eba5e436dbef8df9f9abbb095a32908830c13ea1363fb951ae5e4780'
+    version '3.7'
+    sha256 'fd8f0fa03b03fa0307a74694abed29e797b13e844d4d435c21f588fef5bb5d79'
 
     url "http://www.joshjacob.com/mac-development/TNEF#{version}.dmg"
   end
 
+  appcast 'http://www.joshjacob.com/mac-development/tnef.php',
+          checkpoint: '83846e43fd6821cf841c656e8d94b11e11ddb9df85c415a4f14578363297dcf7'
   name 'TNEF\'s Enough'
   homepage 'http://www.joshjacob.com/mac-development/tnef.php'
 

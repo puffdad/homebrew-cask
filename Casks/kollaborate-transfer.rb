@@ -1,6 +1,6 @@
 cask 'kollaborate-transfer' do
-  version '1.3.0.0'
-  sha256 '3fcfd9bab9232133b2a78bcbfc6fecf1b4730adf014996d5bd2fdf57d2e5b734'
+  version '1.4.5.0'
+  sha256 'd534c227c409de20f1f9bd399fad0ddc95d7f09b2e1e0fe91161d6502fdf6917'
 
   # digitalrebellion.com was verified as official when first introduced to the cask
   url "http://www.digitalrebellion.com/download/kollabtransfer?version=#{version.no_dots}"

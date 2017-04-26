@@ -1,11 +1,11 @@
 cask 'rocket-chat' do
-  version '1.3.1'
-  sha256 '5b9f5fa210cacba028adedb5d568066a45646aad97c3ec3abc91677162cbf492'
+  version '2.6.1'
+  sha256 'a841e70eaa662db23fa8532d44c76aabd0b40cde6fb965a932066a6ce131879e'
 
   # github.com/RocketChat/Rocket.Chat.Electron was verified as official when first introduced to the cask
-  url "https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/#{version}/rocketchat-v#{version}-darwin-x64.dmg"
+  url "https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/#{version}/rocketchat-#{version}.dmg"
   appcast 'https://github.com/RocketChat/Rocket.Chat.Electron/releases.atom',
-          checkpoint: '922e9d17e94db136177c9d8b3bad4e7eb1a2fb1d5794248cd298c9f4c25176a4'
+          checkpoint: 'ed1efc7d42124696e2dbf37d84d4963a28e7366b1a7c2e3d80d232eccbc4507d'
   name 'Rocket.Chat'
   homepage 'https://rocket.chat/'
 

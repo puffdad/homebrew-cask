@@ -1,11 +1,11 @@
 cask 'klayout' do
-  version '0.24.8'
-  sha256 '95b38f338b76636fc3fa840b747fc3a62dd9335a69163996fd741f289c62f40e'
+  version '0.24.10'
+  sha256 'a2097dd73f8bbdeb4297f1fdaba01635894941ae1b3c376e625948171061d6d6'
 
   # klayout.org was verified as official when first introduced to the cask
-  url "http://www.klayout.org/downloads/klayout-#{version}-MacOSX-Yosemite-1-Qt487mp.dmg.bz2"
+  url "http://www.klayout.org/downloads/MacOS/klayout-#{version}-MacOSX-Yosemite-1-Qt487mp.dmg.bz2"
   name 'KLayout'
-  homepage 'http://www.klayout.de/'
+  homepage 'https://www.klayout.de/'
 
   suite 'KLayout'
 

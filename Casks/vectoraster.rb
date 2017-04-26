@@ -1,6 +1,6 @@
 cask 'vectoraster' do
-  version '6.2.5'
-  sha256 '363bf4c718e0be1fc130e8c00b8e61630b332dc173272fcfce5408c080db2c87'
+  version '7.0.9'
+  sha256 '3c38d964266f47d148fbe1b0dac58fa75b44c1562420555a07d7185db00a2244'
 
   url "https://www.lostminds.com/downloads/dl.php?vectoraster#{version.major}.zip"
   name 'Vectoraster'

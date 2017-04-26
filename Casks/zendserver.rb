@@ -1,6 +1,6 @@
 cask 'zendserver' do
-  version '9.0.1,7.0.11'
-  sha256 'e8de80902d9066b2194d98e5ab4a4387d3a1f4359c624245d8beba4c14040ab9'
+  version '9.1.0,7.1.3'
+  sha256 '6feb928904b2b4174db4601289f0614935c23975e93582cd777135d3e4d2d34b'
 
   url "http://downloads.zend.com/zendserver/#{version.before_comma}/ZendServer-#{version.before_comma}-php-#{version.after_comma}.dmg"
   name 'Zend Server'
@@ -8,7 +8,11 @@ cask 'zendserver' do
 
   pkg 'Zend Server.pkg'
 
-  uninstall script:  { executable: '/usr/local/zend/bin/uninstall.sh', args: ['--automatic'] },
+  uninstall script:  {
+                       executable: '/usr/local/zend/bin/uninstall.sh',
+                       args:       ['--automatic'],
+                       sudo:       true,
+                     },
             pkgutil: 'zenith.pkg.ZendServer'
 
   caveats do

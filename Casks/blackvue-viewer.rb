@@ -1,10 +1,10 @@
 cask 'blackvue-viewer' do
-  version '1.31_20150406'
-  sha256 '633a795e12b0e4c73f14b2a1232cc561839ed251a1e00b87c5fe1309b37ceb66'
+  version '1.06,74331'
+  sha256 'a4a751e0528e904de3cf3347f97f9f6f396a3c053919c443ce6472500a0f6b78'
 
-  url "http://www.blackvue.com/en/common/downloadHIT.asp?downfile=BlackVue%20Viewer_#{version.major_minor}.app.zip&path=board&idx=2052"
+  url "https://www.blackvue.com/download/blackvue-mac-viewer-cloud/?wpdmdl=#{version.after_comma}"
   name 'BlackVue Viewer'
   homepage 'https://www.blackvue.com/'
 
-  app "BlackVue Viewer_#{version}.app"
+  app 'BlackVue Viewer.app'
 end

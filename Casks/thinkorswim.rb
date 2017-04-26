@@ -6,13 +6,13 @@ cask 'thinkorswim' do
   name 'thinkDesktop'
   homepage 'https://mediaserver.thinkorswim.com/installer/install.html#macosx'
 
-  installer script: 'thinkorswim Installer.app/Contents/MacOS/JavaApplicationStub',
-            args:   ['-q'],
-            sudo:   false
+  installer script: {
+                      executable: 'thinkorswim Installer.app/Contents/MacOS/JavaApplicationStub',
+                      args:       ['-q'],
+                    }
 
   uninstall script: {
                       executable: '/Applications/thinkorswim/thinkorswim Uninstaller.app/Contents/MacOS/JavaApplicationStub',
                       args:       ['-q'],
-                      sudo:       false,
                     }
 end

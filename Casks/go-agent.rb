@@ -1,10 +1,12 @@
 cask 'go-agent' do
-  version '16.10.0-4131'
-  sha256 '401a4757ba7caaf5bdbaac1ca5e5e1f7af6674dc15b586ee90f932d1eb7a63c4'
+  version '17.3.0-4704'
+  sha256 'a3f4fc0bf61e6a75c86fe7a7651d4125fca337d4ace25bde289c7fa959d9c789'
 
-  url "https://download.go.cd/binaries/#{version}/osx/go-agent-#{version}-osx.zip"
+  url "https://download.gocd.io/binaries/#{version}/osx/go-agent-#{version}-osx.zip"
+  appcast 'https://github.com/gocd/gocd/releases.atom',
+          checkpoint: 'ce17e0124c329cc9c755c014579480f4ac0ffb78543db6da611c86ba09cd74b7'
   name 'Go Agent'
-  homepage 'https://www.go.cd/'
+  homepage 'https://www.gocd.io/'
 
   app 'Go Agent.app'
 end

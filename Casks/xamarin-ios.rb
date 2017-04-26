@@ -1,10 +1,10 @@
 cask 'xamarin-ios' do
-  version '10.2.1.5'
-  sha256 '7b93603fe4373c9d822c2f04ffc1a354c87bfbc9d3cab01e6b104e3c261f1268'
+  version '10.10.0.11'
+  sha256 '2db8de7902ebfe0da7e94fed39de6c3e3d1dc5338749034db46213cdc27c355a'
 
   url "https://dl.xamarin.com/MonoTouch/Mac/xamarin.ios-#{version}.pkg"
   appcast 'https://static.xamarin.com/installer_assets/v3/Mac/Universal/InstallationManifest.xml',
-          checkpoint: '48d144620a3f8785b258c63ee2fb7e75a97b40ad3bfb947a74b914440df16422'
+          checkpoint: '477c85901ee0146c2f34467c8cfc1f3a94bcb96c5467bb8b5cfc1ed765b3676e'
   name 'Xamarin.iOS'
   homepage 'https://www.xamarin.com/platform'
 
@@ -12,5 +12,6 @@ cask 'xamarin-ios' do
 
   uninstall pkgutil: [
                        'com.xamarin.xamarin.ios.pkg',
+                       'com.xamarin.xamarin-ios-build-host.pkg',
                      ]
 end

@@ -1,6 +1,6 @@
 cask 'dynamite' do
-  version '3.2.2'
-  sha256 'e1ac339c37844bcbe82f9cc1718aa7cd7c7232d36761dbf3a0a84d500899a06c'
+  version '3.2.4'
+  sha256 'de0d67eba6affd46ac8a5fe1d0d6dd741860d791730b6c53891fafc6c8ac6d97'
 
   url "https://mediaatelier.com/DynaMite3/DynaMite_#{version}.zip"
   name 'DynaMite'

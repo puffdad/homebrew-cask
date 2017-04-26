@@ -4,8 +4,12 @@ cask 'knockknock' do
 
   # bitbucket.org/objective-see was verified as official when first introduced to the cask
   url "https://bitbucket.org/objective-see/deploy/downloads/KnockKnock_#{version}.zip"
+  appcast 'https://objective-see.com/products/changelogs/KnockKnock.txt',
+          checkpoint: '81ac609807675f5159467d8bb0c6caea39a3196ebd6e05b6a165411044b87cf2'
   name 'KnockKnock'
   homepage 'https://objective-see.com/products/knockknock.html'
+
+  depends_on macos: '>= :mountain_lion'
 
   app 'KnockKnock.app'
 end

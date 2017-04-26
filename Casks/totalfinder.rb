@@ -1,6 +1,6 @@
 cask 'totalfinder' do
-  version '1.8.1'
-  sha256 '44b55198ab763ae1398507249f71d8473ec14a92dee5bb282608a832306023d0'
+  version '1.9.1'
+  sha256 '32076838297df25930fba15d7b0ae0da04833ecc6ecbb7cdb421c6cf01bba144'
 
   url "http://downloads.binaryage.com/TotalFinder-#{version}.dmg"
   name 'TotalFinder'
@@ -14,5 +14,6 @@ cask 'totalfinder' do
             script:  {
                        executable: 'TotalFinder Uninstaller.app/Contents/MacOS/TotalFinder Uninstaller',
                        args:       %w[--headless],
+                       sudo:       true,
                      }
 end

@@ -1,13 +1,12 @@
 cask 'eclipse-installer' do
-  version '4.6.1,neon:1a'
-  sha256 '6dbfc18fa2fde0bc5fe497b5383f7e6029107f24240c35df74abfb66c0862ded'
+  version '4.6.3,neon:3'
+  sha256 '4b40a694b998c1b8f5819837ae50bdd9f7113d9c410760d966eb47d2aa2b4ddf'
 
-  url "https://eclipse.org/downloads/download.php?file=/oomph/epp/#{version.after_comma.before_colon}/R1/eclipse-inst-mac64.tar.gz&r=1"
+  url "https://eclipse.org/downloads/download.php?file=/oomph/epp/#{version.after_comma.before_colon}/R#{version.after_colon}/eclipse-inst-mac64.tar.gz&r=1"
   name 'Eclipse Installer'
   homepage 'https://eclipse.org/'
 
   depends_on macos: '>= :leopard'
-  depends_on arch: :x86_64
 
   app 'Eclipse Installer.app'
 

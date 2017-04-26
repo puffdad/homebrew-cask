@@ -1,10 +1,10 @@
 cask 'whichspace' do
-  version '0.1.9'
-  sha256 '4c1c0fb5f036cb1e11e2126ea5caaafb2ea9526523ed3a36a160793910529b57'
+  version '0.2.4'
+  sha256 'd062876e0194438dab6a1dcc9b19df01f7c6ee204e9218579e9e21c085883484'
 
-  url "https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.app.zip"
+  url "https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
   appcast 'https://github.com/gechr/WhichSpace/releases.atom',
-          checkpoint: '100d2a27e92d419f26342e7c2389388e0812a59640d21203db0c8c81a8aa9b82'
+          checkpoint: 'fe1751d86fc31f18f159b02fa85c5ceffdf7ccc04c9e8dcbb589f56cfd3d01b3'
   name 'WhichSpace'
   homepage 'https://github.com/gechr/WhichSpace'
 

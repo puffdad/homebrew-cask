@@ -1,6 +1,6 @@
 cask 'adobe-photoshop-lightroom' do
-  version '6.7'
-  sha256 '882e403e9a50df4bf46daf10bd15b7aa66cc552d066ea675563f553b3ddffd9d'
+  version '6.9'
+  sha256 '79bd2ecc4b230ac729e10238d2660d8dc93cef16d55dd389a76335f91c1dc1b9'
 
   url "http://swupdl.adobe.com/updates/oobe/aam20/mac/AdobeLightroom-#{version.major}.0/#{version}/setup.dmg"
   name 'Adobe Photoshop Lightroom'
@@ -13,7 +13,12 @@ cask 'adobe-photoshop-lightroom' do
   # and https://github.com/caskroom/homebrew-versions/pull/296
 
   preflight do
-    system_command '/usr/bin/killall', args: ['-kill', 'SafariNotificationAgent']
+    processes = system_command '/bin/launchctl', args: ['list']
+
+    if processes.stdout.lines.any? { |line| line =~ %r{^\d+\t\d\tcom.apple.SafariNotificationAgent$} }
+      system_command '/usr/bin/killall', args: ['-kill', 'SafariNotificationAgent']
+    end
+
     system_command "#{staged_path}/AdobePatchInstaller.app/Contents/MacOS/AdobePatchInstaller",
                    args: [
                            '--mode=silent',

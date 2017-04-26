@@ -1,11 +1,11 @@
 cask 'cockatrice' do
-  version '2016-06-30,Archivist_Madness'
-  sha256 '01324b10b9588b66f30a3315392032faac841478226f6bd34be0965d63a3c0cf'
+  version '2017-04-15-Release-2.3.16,Thopter_Pie_Network_Revision2'
+  sha256 '7805ab87a575a046db7f7ec583b4fbdfdd2346935264d7b3d7e437dd42c63775'
 
   # github.com/Cockatrice/Cockatrice was verified as official when first introduced to the cask
-  url "https://github.com/Cockatrice/Cockatrice/releases/download/#{version.before_comma}-Release/Cockatrice_#{version.after_comma}_osx.dmg.zip"
+  url "https://github.com/Cockatrice/Cockatrice/releases/download/#{version.before_comma}/Cockatrice_#{version.after_comma}_osx.dmg"
   appcast 'https://github.com/Cockatrice/Cockatrice/releases.atom',
-          checkpoint: '52a316aa5b7a91ec5bc05ab970ed7093a2e79e609b2bc22fe9ffaf44b2b73928'
+          checkpoint: 'ace3e09fe8752093a46cae364bec07afd961934e279bddc862650cefe30e50db'
   name 'Cockatrice'
   homepage 'http://www.woogerworks.com/'
 
