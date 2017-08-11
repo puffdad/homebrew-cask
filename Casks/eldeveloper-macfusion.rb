@@ -4,7 +4,7 @@ cask 'eldeveloper-macfusion' do
 
   url "https://github.com/ElDeveloper/macfusion#{version.major}/releases/download/#{version}/Macfusion.zip"
   appcast "https://github.com/ElDeveloper/macfusion#{version.major}/releases.atom",
-          checkpoint: '1d723f056dc494253c55c5fa83f3f679ea9c4b421b2a97b806a70c08470aae08'
+          checkpoint: '4f19fdf3855e04e508dec355554487deaba49414556e6f93bc947d054703808b'
   name 'Macfusion'
   homepage "https://github.com/ElDeveloper/macfusion#{version.major}/"
 

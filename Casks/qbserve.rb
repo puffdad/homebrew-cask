@@ -1,10 +1,10 @@
 cask 'qbserve' do
-  version '1.59'
-  sha256 'c2085936d3855e3484913a449986eb3dfe7ed3db7d1affb5bb08ff1cb053b673'
+  version '1.66'
+  sha256 '109f6c61251625f4f6d80c65fbab51ecff33fbf395f3378a9b731b0013e97df3'
 
   url "https://qotoqot.com/qbserve/app/Qbserve-#{version}.zip"
   appcast 'https://qotoqot.com/qbserve/app/appcast.xml',
-          checkpoint: '59685894af371a9e3b7c930bd3898c928dbf0c5dfbbd184940a73569a285722c'
+          checkpoint: '9fb29cefaa0ed46861ee3c83d395065d5bc84028d40c836e27c6fbf5215192d2'
   name 'Qbserve'
   homepage 'https://qotoqot.com/qbserve/'
 

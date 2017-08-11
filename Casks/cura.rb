@@ -1,6 +1,6 @@
 cask 'cura' do
-  version '2.5.0'
-  sha256 '6f7add9aab25456a3051d976e64b9bd5fa9b5f315c50ead7d99d14a05bc5fe75'
+  version '2.6.2'
+  sha256 'd288f5ea5f00ae5d2c6b0a586ad28a67a7487962d5443b38a2feee7ccfdf9ed5'
 
   url "https://software.ultimaker.com/current/Cura-#{version}-Darwin.dmg"
   name 'Cura'

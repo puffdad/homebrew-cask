@@ -1,16 +1,15 @@
 cask 'amazon-music' do
-  version '20170404,0512355017'
-  sha256 '5542cd8533b5ad82047924094b3c547e431b8fda48cb596403bf03b468810a27'
+  version '20170718,2249052499'
+  sha256 '5f1d22f13d1baf5d9b23cc3a9491537c97705180e0c0008e960679dcdfcdd0bb'
 
   # ssl-images-amazon.com was verified as official when first introduced to the cask
   url "https://images-na.ssl-images-amazon.com/images/G/01/digital/music/morpho/installers/#{version.before_comma}/#{version.after_comma}/AmazonMusicInstaller.dmg"
   name 'Amazon Music'
-  homepage 'https://www.amazon.com/gp/feature.html/?ie=UTF8&docId=1001067901'
+  homepage 'https://www.amazon.com/b/ref=topnav_storetab_dmusic?node=14981443011'
 
   installer script: {
                       executable: 'Amazon Music Installer.app/Contents/MacOS/osx-intel',
                       args:       ['--unattendedmodeui', 'none'],
-                      sudo:       true,
                     }
 
   uninstall quit:      [
@@ -28,7 +27,7 @@ cask 'amazon-music' do
               ]
 
   caveats <<-EOS.undent
-    If the app won't launch after installation, try
+    If the app will not launch after installation, try
 
       brew cask zap #{token}
       brew cask install #{token}

@@ -5,7 +5,7 @@ cask 'kap' do
   # github.com/wulkano/kap was verified as official when first introduced to the cask
   url "https://github.com/wulkano/kap/releases/download/v#{version.major_minor_patch}/Kap-#{version}.dmg"
   appcast 'https://github.com/wulkano/kap/releases.atom',
-          checkpoint: 'e67cf1cab1106059a7d545b04c56731ef398c41fb0c692138a4579f0d97dc890'
+          checkpoint: '52c44a145740d866ad26315f5d9c6d310307d76305d66d2f91cf2c04c0b020c3'
   name 'Kap'
   homepage 'https://getkap.co/'
 

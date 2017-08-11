@@ -10,7 +10,6 @@ cask 'trash-it' do
     url 'http://nonamescriptware.com/wp-content/uploads/Trashit.zip'
     app "Trash It! #{version}/Drag content to Desktop/Trash It!.app"
   end
-
   name 'Trash It!'
   homepage 'http://nonamescriptware.com/'
 end

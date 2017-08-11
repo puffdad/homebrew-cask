@@ -5,12 +5,12 @@ cask 'texpad' do
 
     url "https://download.texpadapp.com/apps/osx/updates/Texpad_#{version.dots_to_underscores}.zip"
   else
-    version '1.7.41,172,423dc8c'
-    sha256 'b5894d99a131c3ed0630c5397f516b22d34f2ed89d45e88c858d38afda99ed16'
+    version '1.7.43,210,723a277'
+    sha256 'f26843b05b8e325ac7606745375470ee34d3aa9e5f074cdd854366e0a9dce859'
 
     url "https://download.texpadapp.com/apps/osx/updates/Texpad_#{version.before_comma.dots_to_underscores}__#{version.after_comma.before_comma}__#{version.after_comma.after_comma}.dmg"
     appcast 'https://www.texpadapp.com/static-collected/upgrades/texpadappcast.xml',
-            checkpoint: 'bb20f1d972495ce913b85fbe7d1f91b7b8b481c447a98c1b58111e5643f81afd'
+            checkpoint: 'a7e90c042274d6a1c061fa16b956172e4ce2503dba18861eef2e8fa2fb77d013'
   end
 
   name 'Texpad'

@@ -11,26 +11,29 @@ cask 'crystax-ndk' do
   # shim script (https://github.com/caskroom/homebrew-cask/issues/18809)
   shimscript = "#{staged_path}/ndk_exec.sh"
   preflight do
-    FileUtils.ln(staged_path.to_s, "#{HOMEBREW_PREFIX}/opt/crystax-ndk", force: true)
+    FileUtils.ln_sf("#{staged_path}/crystax-ndk-r#{version}", "#{HOMEBREW_PREFIX}/share/crystax-ndk")
 
     IO.write shimscript, <<-EOS.undent
       #!/bin/bash
       readonly executable="#{staged_path}/crystax-ndk-r#{version}/$(basename ${0})"
       test -f "${executable}" && exec "${executable}" "${@}"
     EOS
-    set_permissions shimscript, '+x'
   end
 
-  %w[
-    ndk-build
-    ndk-depends
-    ndk-gdb
-    ndk-stack
-    ndk-which
+  [
+    'ndk-build',
+    'ndk-depends',
+    'ndk-gdb',
+    'ndk-stack',
+    'ndk-which',
   ].each { |link_name| binary shimscript, target: link_name }
+
+  uninstall_postflight do
+    FileUtils.rm("#{HOMEBREW_PREFIX}/share/crystax-ndk")
+  end
 
   caveats <<-EOS.undent
    You may want to add to your profile:
-      'export ANDROID_NDK_HOME="#{HOMEBREW_PREFIX}/opt/crystax-ndk"'
+      'export ANDROID_NDK_HOME="#{HOMEBREW_PREFIX}/share/crystax-ndk"'
   EOS
 end

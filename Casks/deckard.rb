@@ -12,14 +12,10 @@ cask 'deckard' do
 
   app 'Deckard.app'
 
-  postflight do
-    suppress_move_to_applications
-  end
-
-  zap delete: [
-                '~/.deckard',
-                '~/Library/Preferences/ai.deckard.ui.plist',
-                '~/Library/Preferences/ai.deckard.ui.helper.plist',
-                '~/Library/Application Support/deckard',
-              ]
+  zap trash: [
+               '~/.deckard',
+               '~/Library/Preferences/ai.deckard.ui.plist',
+               '~/Library/Preferences/ai.deckard.ui.helper.plist',
+               '~/Library/Application Support/deckard',
+             ]
 end

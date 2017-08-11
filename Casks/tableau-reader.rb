@@ -1,10 +1,15 @@
 cask 'tableau-reader' do
-  version '10.1.4'
-  sha256 '3152809ebd7ae11a0044619f099370d1cd6a6493e54cadd7429662b4d012e521'
+  version '10.3.1'
+  sha256 'b77173e1da5e0534ecfe96fb14a47204f43db144f027e3eed007412e1d1b59f6'
 
   url "https://downloads.tableau.com/tssoftware/TableauReader-#{version.dots_to_hyphens}.dmg"
   name 'Tableau Reader'
   homepage 'https://www.tableau.com/products/reader'
 
-  app 'Tableau Reader.app'
+  pkg 'Tableau Reader.pkg'
+
+  uninstall pkgutil: [
+                       'com.tableausoftware.FLEXNet.*',
+                       'com.tableausoftware.Reader.app',
+                     ]
 end

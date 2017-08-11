@@ -1,6 +1,6 @@
 cask 'alfred' do
-  version '3.3.2_818'
-  sha256 '3915387b8a194e5d67014f3167c739e969e0f9f8189195a03f99d03abff0c5fa'
+  version '3.4.1_860'
+  sha256 'b436a1229bf8f213978c4c4e0e36195f4488ccd13012bfc6822e91def50a6590'
 
   url "https://cachefly.alfredapp.com/Alfred_#{version}.zip"
   name 'Alfred'
@@ -10,10 +10,6 @@ cask 'alfred' do
   accessibility_access true
 
   app "Alfred #{version.major}.app"
-
-  postflight do
-    suppress_move_to_applications key: 'suppressMoveToApplications'
-  end
 
   uninstall quit:       'com.runningwithcrayons.Alfred-3',
             login_item: 'Alfred 3'

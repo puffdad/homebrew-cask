@@ -25,6 +25,21 @@ cask 'jce-unlimited-strength-policy' do
                      args: ['-nsf', "#{staged_path}/UnlimitedJCEPolicyJDK#{version.minor}/local_policy.jar", "#{path}/jre/lib/security/local_policy.jar"],
                      sudo: true
     end
+    system_command '/bin/cp',
+                   args: ['-an', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar.bak'],
+                   sudo: true
+
+    system_command '/bin/cp',
+                   args: ['-an', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar.bak'],
+                   sudo: true
+
+    system_command '/bin/ln',
+                   args: ['-nsf', "#{staged_path}/UnlimitedJCEPolicyJDK#{version.minor}/US_export_policy.jar", '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar'],
+                   sudo: true
+
+    system_command '/bin/ln',
+                   args: ['-nsf', "#{staged_path}/UnlimitedJCEPolicyJDK#{version.minor}/local_policy.jar", '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar'],
+                   sudo: true
   end
 
   uninstall_postflight do
@@ -36,10 +51,18 @@ cask 'jce-unlimited-strength-policy' do
                      args: ['-f', "#{path}/jre/lib/security/local_policy.jar.bak", "#{path}/jre/lib/security/local_policy.jar"],
                      sudo: true
     end
+    system_command '/bin/mv',
+                   args: ['-f', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar.bak', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar'],
+                   sudo: true
+    system_command '/bin/mv',
+                   args: ['-f', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar.bak', '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar'],
+                   sudo: true
   end
 
   caveats <<-EOS.undent
     Installing this Cask means you have AGREED to the Oracle Binary Code License Agreement for Java SE at
       https://www.oracle.com/technetwork/java/javase/terms/license/index.html
+
+    #{token} will be uninstalled when the Java Cask is uninstalled or reinstalled
   EOS
 end

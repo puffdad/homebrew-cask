@@ -4,14 +4,14 @@ cask 'easysimbl' do
 
   url "https://github.com/norio-nomura/EasySIMBL/releases/download/EasySIMBL-#{version}/EasySIMBL-#{version}.zip"
   appcast 'https://github.com/norio-nomura/EasySIMBL/releases.atom',
-          checkpoint: 'd4dbce66da553b7cd56a005c0d6e154f87ffe8bf0728b530e3a18b4f00915572'
+          checkpoint: 'd65c3d782fe6e843622e5296ce476f0632a973e7e6c1027b2b25f91492838258'
   name 'EasySIMBL'
   homepage 'https://github.com/norio-nomura/EasySIMBL'
 
   app 'EasySIMBL.app'
 
-  zap delete: [
-                '~/Library/Preferences/com.github.norio-nomura.EasySIMBL.plist',
-                '~/Library/Preferences/com.github.norio-nomura.SIMBL-Agent.plist',
-              ]
+  zap trash: [
+               '~/Library/Preferences/com.github.norio-nomura.EasySIMBL.plist',
+               '~/Library/Preferences/com.github.norio-nomura.SIMBL-Agent.plist',
+             ]
 end

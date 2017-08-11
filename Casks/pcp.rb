@@ -1,6 +1,6 @@
 cask 'pcp' do
-  version '3.11.4-1'
-  sha256 '23ab95f60c127601e7b995525523b2a8762eab224fdaa12c8bffc39b3de3fc34'
+  version '3.12.0-1'
+  sha256 'dcbfb5a17dd723dcc3b3345cf5ab939cc132a8fdda83e1661f4598cc7a2be72b'
 
   # bintray.com/pcp/macosx was verified as official when first introduced to the cask
   url "https://bintray.com/pcp/macosx/download_file?file_path=pcp-#{version}.dmg"
@@ -87,7 +87,7 @@ cask 'pcp' do
                        ],
             launchctl: 'io.pcp'
 
-  zap delete: '~/.pcp'
+  zap trash: '~/.pcp'
 
   caveats <<-EOS.undent
     During installation 2 windows will pop up asking your permission for access for network ports for `pmlogger` and `pmcd`.  This is expected.

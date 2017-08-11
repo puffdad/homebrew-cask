@@ -5,7 +5,7 @@ cask 'gephi' do
   # github.com/gephi/gephi was verified as official when first introduced to the cask
   url "https://github.com/gephi/gephi/releases/download/v#{version}/gephi-#{version}-macos.dmg"
   appcast 'https://github.com/gephi/gephi/releases.atom',
-          checkpoint: 'd1feebc671a218ea171e3c8c521cc6450e09d556f29a086649c94f4339e6e1e5'
+          checkpoint: '69dacb6508d264fcd35789495674f909c6166cdae43625b208fed0c854082418'
   name 'Gephi'
   homepage 'https://gephi.org/'
 

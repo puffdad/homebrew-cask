@@ -4,7 +4,7 @@ cask 'earthdeskprefpane' do
 
   url "http://download.xericdesign.com/earthdesk-#{version}.zip"
   appcast 'http://www.xericdesign.com/sparkle/feeds/EarthDeskAppFeedV7.xml',
-          checkpoint: '4aa87dd81a365ae91a2a6bbfc7eb0d07c8e483b9341a822f819ba4458026796a'
+          checkpoint: '1b0748cda145f72854ce6d962a5727ee8752b80fbe856e0ed0f9e8ef72389154'
   name 'EarthDesk'
   homepage 'http://www.xericdesign.com/earthdesk.php'
 
@@ -18,10 +18,10 @@ cask 'earthdeskprefpane' do
                       '/Library/PreferencePanes/EarthDesk.prefpane',
                     ]
 
-  zap delete: [
-                '~/Library/Preferences/com.apple.desktop.plist',
-                '~/Library/Preferences/com.xericdesign.earthdesk.core.plist',
-                '~/Library/Preferences/com.xericdesign.earthdesk.engine.plist',
-                '~/Library/Preferences/com.xericdesign.earthdesk.prefPane.plist',
-              ]
+  zap trash: [
+               '~/Library/Preferences/com.apple.desktop.plist',
+               '~/Library/Preferences/com.xericdesign.earthdesk.core.plist',
+               '~/Library/Preferences/com.xericdesign.earthdesk.engine.plist',
+               '~/Library/Preferences/com.xericdesign.earthdesk.prefPane.plist',
+             ]
 end

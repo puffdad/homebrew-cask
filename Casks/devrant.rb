@@ -4,7 +4,7 @@ cask 'devrant' do
 
   url "https://github.com/Meadowcottage/devRant/releases/download/#{version}/devRant-#{version}.dmg"
   appcast 'https://github.com/Meadowcottage/devRant/releases.atom',
-          checkpoint: '7c6f89d3f2263ed0f01e1b0a171e8649c00b01608921f71204c2b9aba6b6338a'
+          checkpoint: '54943700e5e9c020a0e64c9a8eea7143d35f91b1840e8452d19a0527f72d33eb'
   name 'devrant'
   homepage 'https://github.com/Meadowcottage/devRant'
 

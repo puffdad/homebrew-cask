@@ -1,10 +1,10 @@
 cask 'pb-for-desktop' do
-  version '5.9.1'
-  sha256 '22f2c1fd00e543957f9845c8c0be1973d34484416f86111411cba60e3a7ea1e0'
+  version '5.9.6'
+  sha256 'f0d5c0d899ffa770c8ee087fa778ef988cb8684fa1d30357a8fa00660cafbfe0'
 
   url "https://github.com/sidneys/pb-for-desktop/releases/download/v#{version}/pb-for-desktop-#{version}.dmg"
   appcast 'https://github.com/sidneys/pb-for-desktop/releases.atom',
-          checkpoint: '7982f2908ae0bf36b2c4b7b62bc1108af43144203ef6fedbaf87cce32cd6492b'
+          checkpoint: 'bacf7728f06ef618f97199ade4a2528cf64715991a34898a339cec02bcb2d98a'
   name 'PB for Desktop'
   homepage 'https://github.com/sidneys/pb-for-desktop'
 

@@ -1,17 +1,15 @@
 cask 'fsmonitor' do
-  version '80'
-  sha256 'd7b22282de0dd1343af237effc5f186b05fa765169de679e769897a5f6ee6c45'
+  version '84'
+  sha256 '9f835c5d257bd6ef66bd2f8ddc0229ff3829bd556bbde75521b98b794f32a164'
 
   # tristan-software.ch/FSMonitor was verified as official when first introduced to the cask
   url "https://tristan-software.ch/FSMonitor/Archives/FSMonitor_#{version}.zip"
   name 'FSMonitor'
-  homepage 'http://fsmonitor.com/'
+  homepage 'https://fsmonitor.com/'
+
+  auto_updates true
 
   app 'FSMonitor.app'
-
-  postflight do
-    suppress_move_to_applications
-  end
 
   zap delete: [
                 '/Library/LaunchDaemons/com.tristan.fseventstool.plist',

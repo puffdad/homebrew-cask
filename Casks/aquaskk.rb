@@ -4,7 +4,7 @@ cask 'aquaskk' do
 
   url "https://github.com/codefirst/aquaskk/releases/download/#{version}/AquaSKK-#{version}.dmg"
   appcast 'https://github.com/codefirst/aquaskk/releases.atom',
-          checkpoint: 'f28054fe31c55e5b93cdd2e2f3515534e5225c74c2fbb960a221ad3983247f46'
+          checkpoint: 'ea74f92ede5616588852b9b38b4a5b10a3ee75892a167a48b39a6c0134aaf429'
   name 'AquaSKK'
   homepage 'https://github.com/codefirst/aquaskk'
 

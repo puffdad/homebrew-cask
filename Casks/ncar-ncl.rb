@@ -10,7 +10,7 @@ cask 'ncar-ncl' do
   end
 
   appcast 'https://www.ncl.ucar.edu/current_release.shtml',
-          checkpoint: 'd8de7ea6d65bdb008d2080157cb901d37eaeaeb501742ea54c7f209ac6e8ea85'
+          checkpoint: '634aeb20f5c52736d0d800cf2a77abaa6c16685550a46e817590ef3dbd482d6b'
   name 'NCAR Command Language'
   name 'ncl'
   homepage 'https://www.ncl.ucar.edu/'
@@ -19,9 +19,15 @@ cask 'ncar-ncl' do
   depends_on formula: 'gcc'
   depends_on macos: '>= :el_capitan'
 
-  artifact 'include', target: '/usr/local/ncl-6.3.0/include'
-  artifact 'bin', target: '/usr/local/ncl-6.3.0/bin'
-  artifact 'lib', target: '/usr/local/ncl-6.3.0/lib'
+  artifact 'include', target: "/usr/local/ncl-#{version}/include"
+  artifact 'bin', target: "/usr/local/ncl-#{version}/bin"
+  artifact 'lib', target: "/usr/local/ncl-#{version}/lib"
+
+  preflight do
+    system_command '/bin/mkdir', args: ['-p', "/usr/local/ncl-#{version}"], sudo: true
+  end
+
+  uninstall delete: "/usr/local/ncl-#{version}"
 
   caveats <<-EOS.undent
     To use ncar-ncl, you must add the $NCARG_ROOT/bin directory
@@ -29,7 +35,7 @@ cask 'ncar-ncl' do
 
     For bash shell, add these lines to ~/.bash_profile:
 
-      export NCARG_ROOT=/usr/local/ncl-6.4.0
+      export NCARG_ROOT=/usr/local/ncl-#{version}
       export PATH=$NCARG_ROOT/bin:"$PATH"
 
     You may also need to modify your DYLD_FALLBACK_LIBRARY_PATH

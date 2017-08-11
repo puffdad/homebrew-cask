@@ -1,19 +1,22 @@
 cask 'nanobox' do
-  version '0.18.2'
-  sha256 '433efa3076ab217e04707f8707476af48b1bc2727791cfcb5230d12a9003be1b'
+  version '2.1.2'
+  sha256 '06fcf6071244cd5f7b74b8ea0b1df5a15ff26790f987698f2ad812fbd7732e54'
 
   # s3.amazonaws.com/tools.nanobox.io was verified as official when first introduced to the cask
-  url 'https://s3.amazonaws.com/tools.nanobox.io/cli/darwin/amd64/nanobox'
+  url "https://s3.amazonaws.com/tools.nanobox.io/installers/v#{version.major}/mac/Nanobox.pkg"
   appcast 'https://github.com/nanobox-io/nanobox/releases.atom',
-          checkpoint: '1aa4e3a08daed735dc993d058f352667d55a0d060fb6f1f63868e57a27ac1900'
+          checkpoint: 'ea5b2c616c63b0bf023ffdb11ec901e2b047a1f2c993e8c5d4c1a6843651f20d'
   name 'nanobox'
   homepage 'https://www.nanobox.io/'
 
-  depends_on cask: 'virtualbox'
-  depends_on cask: 'vagrant'
-  container type: :naked
+  pkg 'Nanobox.pkg'
 
-  binary 'nanobox'
+  uninstall launchctl: 'net.sf.tuntaposx.tap',
+            kext:      'net.sf.tuntaposx.tap',
+            pkgutil:   [
+                         'net.sf.tuntaposx.tap',
+                         'io.nanobox.pkg.nanobox',
+                       ]
 
   zap delete: [
                 '~/.nanobox',

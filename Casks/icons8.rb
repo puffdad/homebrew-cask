@@ -1,11 +1,11 @@
 cask 'icons8' do
   # note: "8" is not a version number, but an intrinsic part of the product name
-  version '5.5'
-  sha256 '448dba94aded9064969df658ce1df7177fb23ffd8e8a1d7a14c469b2ce87b19f'
+  version '5.6.3'
+  sha256 '820b3eb24c6868d272f995d44220aa121c1483be30c676a19ce465229712982c'
 
   url 'https://desktop.icons8.com/updates/mac/Icons8App_for_Mac_OS.dmg'
-  appcast 'https://maxcdn.icons8.com/download/icons8_cast.xml',
-          checkpoint: '2acbe167d4fb9a4f3e46e28bf9a0ca3934b8f55371b90c94bcff1c3ecfc1d4d2'
+  appcast 'https://desktop.icons8.com/updates/mac/icons8_cast.xml',
+          checkpoint: '622623074f09dcca53259515f60d9d0302c5b675e45fb0ec3963dcb1dce9e460'
   name 'Icons8 App'
   homepage 'https://icons8.com/'
 

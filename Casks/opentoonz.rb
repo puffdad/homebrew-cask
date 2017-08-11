@@ -1,11 +1,11 @@
 cask 'opentoonz' do
-  version '1.1.2'
-  sha256 'd9cd6fb30111ca2e0b1f7051f37b342ecf3c43e4a7ac604255b95a684ecdb6ff'
+  version '1.1.3'
+  sha256 '84a820f66f03a360d8f3fda1218bd4d1166ff8d33d55e3c39a392398fd603abb'
 
   # github.com/opentoonz/opentoonz was verified as official when first introduced to the cask
   url "https://github.com/opentoonz/opentoonz/releases/download/v#{version}/OpenToonz.pkg"
   appcast 'https://github.com/opentoonz/opentoonz/releases.atom',
-          checkpoint: 'f0ba39ba289549df0369e0c98d94caf6d6544b876993b918f80e735bc6674760'
+          checkpoint: 'cc268a98e0ca2496c3b04801c33c1c25908503d8fcc7264cfee658c578f16546'
   name 'OpenToonz'
   homepage 'https://opentoonz.github.io/'
 

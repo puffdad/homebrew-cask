@@ -1,10 +1,10 @@
 cask 'docker' do
-  version '17.03.1-ce,16048'
-  sha256 '403b167dff238f5cbdb5fb085a842b8c8e1d6812956873f47df875a01adb0200'
+  version '17.06.0-ce-mac19,18663'
+  sha256 '213664b33af509ea30441362490c6ad4c1f90bd30e12045195b63242f36c5978'
 
   url "https://download.docker.com/mac/stable/#{version.after_comma}/Docker.dmg"
   appcast 'https://download.docker.com/mac/stable/appcast.xml',
-          checkpoint: '03493d6880523160f251ad9b352c19f70e3de61068aa3d4ca8953d8cad90302d'
+          checkpoint: '79e2eb3761e26b86309f1748efc163c7d9af0fe3a64c581ace4944d645e614aa'
   name 'Docker Community Edition'
   name 'Docker CE'
   homepage 'https://www.docker.com/community-edition'
@@ -14,11 +14,12 @@ cask 'docker' do
 
   app 'Docker.app'
 
-  uninstall launchctl: [
+  uninstall delete:    '/Library/PrivilegedHelperTools/com.docker.vmnetd',
+            launchctl: [
                          'com.docker.helper',
                          'com.docker.vmnetd',
                        ],
-            delete:    '/Library/PrivilegedHelperTools/com.docker.vmnetd'
+            quit:      'com.docker.docker'
 
   zap delete: [
                 '~/Library/Application Scripts/com.docker.helper',

@@ -1,8 +1,8 @@
 cask 'adobe-air-sdk' do
-  version '22.0'
-  sha256 'c6a851909dfaab7ee33cc03c98499363a7e59a6d9e4596f86d93b2bb7a895bc1'
+  version '26.0'
+  sha256 'dececd6dc01f6fdd53f410a6c7dc70037f34af07de49ca8ccd54c945c4284af1'
 
-  url "https://airdownload.adobe.com/air/mac/download/#{version}/AIRSDK_Compiler.tbz2"
+  url "https://airdownload.adobe.com/air/mac/download/#{version}/AIRSDK_Compiler.dmg"
   name 'Adobe AIR SDK'
   homepage 'https://www.adobe.com/devnet/air/air-sdk-download.html'
 
@@ -21,20 +21,20 @@ cask 'adobe-air-sdk' do
   binary 'bin/swfdump.wrapper.sh',    target: 'swfdump'
 
   preflight do
-    %w[
-      aasdoc
-      acompc
-      adl
-      adt
-      amxmlc
-      asdoc
-      compc
-      fdb
-      fontswf
-      mxmlc
-      optimizer
-      swcdepends
-      swfdump
+    [
+      'aasdoc',
+      'acompc',
+      'adl',
+      'adt',
+      'amxmlc',
+      'asdoc',
+      'compc',
+      'fdb',
+      'fontswf',
+      'mxmlc',
+      'optimizer',
+      'swcdepends',
+      'swfdump',
     ].each do |shimscript|
       # shim script (https://github.com/caskroom/homebrew-cask/issues/18809)
       IO.write "#{staged_path}/bin/#{shimscript}.wrapper.sh", <<-EOS.undent
@@ -43,4 +43,20 @@ cask 'adobe-air-sdk' do
       EOS
     end
   end
+
+  postflight do
+    FileUtils.ln_sf(staged_path.to_s, "#{HOMEBREW_PREFIX}/share/adobe-air-sdk")
+  end
+
+  uninstall_postflight do
+    FileUtils.rm("#{HOMEBREW_PREFIX}/share/adobe-air-sdk")
+  end
+
+  caveats <<-EOS.undent
+    You may want to add to your profile:
+      'export ADOBE_AIR_HOME=#{HOMEBREW_PREFIX}/share/adobe-air-sdk'
+
+    This operation may take up to 10 minutes depending on your internet connection.
+    Please, be patient.
+  EOS
 end

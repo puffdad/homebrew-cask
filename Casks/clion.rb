@@ -1,26 +1,27 @@
 cask 'clion' do
-  version '2017.1.1,171.4073.41'
-  sha256 'e5ee4856a7c64db9207208243af2b39157ed7bdca6d027309705c021689655e6'
+  version '2017.2.1,172.3544.40'
+  sha256 '2ab6aa4ce812b989c392ce089a7469f72bd7bd8388f923c3a646f9ffac7f6f50'
 
   url "https://download.jetbrains.com/cpp/CLion-#{version.before_comma}.dmg"
   appcast 'https://data.services.jetbrains.com/products/releases?code=CL&latest=true&type=release',
-          checkpoint: '93b9db3b231d83add3349fbc3a6964fe8eb888802a033a6d709615674981f651'
+          checkpoint: '8726cfdd105ff0e2d802a9956b4fc866a88d9dd9d8ee3498348a51f479a91171'
   name 'CLion'
   homepage 'https://www.jetbrains.com/clion/'
 
   auto_updates true
-  conflicts_with cask: 'clion-eap'
 
   app 'CLion.app'
 
   uninstall_postflight do
-    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'clion') }.each { |path| File.delete(path) if File.exist?(path) }
+    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'clion') }.each { |path| File.delete(path) if File.exist?(path) && File.readlines(path).grep(%r{# see com.intellij.idea.SocketLock for the server side of this interface}).any? }
   end
 
   zap delete: [
-                "~/Library/Preferences/CLion#{version.major_minor}",
-                "~/Library/Application Support/CLion#{version.major_minor}",
                 "~/Library/Caches/CLion#{version.major_minor}",
                 "~/Library/Logs/CLion#{version.major_minor}",
+              ],
+      trash:  [
+                "~/Library/Preferences/CLion#{version.major_minor}",
+                "~/Library/Application Support/CLion#{version.major_minor}",
               ]
 end

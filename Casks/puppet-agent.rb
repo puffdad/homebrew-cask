@@ -1,18 +1,18 @@
 cask 'puppet-agent' do
-  version '1.10.0-1'
+  version '1.10.4-1'
 
   if MacOS.version == :yosemite
-    sha256 '18e6eb90656e90f98ee4197a442a0d40bfb2a2e72ea0582e514429322dd75eb0'
+    sha256 'e9c2dd30c2a81cf004f168782e2cc49161e2bd4ea041e43116a7d0be5b854dfb'
   elsif MacOS.version == :el_capitan
-    sha256 '8bb89eaf4b4b36e8e2937bfe888a2464fbadd9797142c8c534d4c3a6152c1c53'
+    sha256 'e37067d3a337492021895ca14a60e50be4eea82e0b9c431b63ecc95b63bf4876'
   else
-    sha256 '1ebd16a2160b5da616e23964f23cd1d67dab11fa52407ebcd6a9ab812e948a91'
+    sha256 '32ff2b3dafbc9e98df979d4a3bb0ebc42963277430a5f5be7ae07e5123bbd143'
   end
 
   # downloads.puppetlabs.com was verified as official when first introduced to the cask
   url "https://downloads.puppetlabs.com/mac/#{MacOS.version}/PC1/x86_64/puppet-agent-#{version}.osx#{MacOS.version}.dmg"
   appcast 'https://downloads.puppetlabs.com/mac/10.12/PC1/x86_64/',
-          checkpoint: '06a1fe68dfe58466a77f55942dc01c1c841edd2d6c70c1d42627ceb2e817fa01'
+          checkpoint: '349c8d077a54dc2d481626a58512f3be63d0287799928ce0fc6feaff5edf5baf'
   name 'Puppet Agent'
   homepage 'https://docs.puppet.com/puppet/4.5/about_agent.html'
 
@@ -20,8 +20,8 @@ cask 'puppet-agent' do
 
   pkg "puppet-agent-#{version}-installer.pkg"
 
-  uninstall launchctl: %w[puppet pxp-agent mcollective],
+  uninstall launchctl: ['puppet', 'pxp-agent', 'mcollective'],
             pkgutil:   'com.puppetlabs.puppet-agent'
 
-  zap delete: '~/.puppetlabs'
+  zap trash: '~/.puppetlabs'
 end

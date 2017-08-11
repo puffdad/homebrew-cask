@@ -1,10 +1,10 @@
 cask 'react-native-debugger' do
-  version '0.6.3'
-  sha256 'a4d740f17451c5a8b0c201c9e0f704c5fbab27e118ade0954acfd765b9b00d22'
+  version '0.7.3'
+  sha256 '3c2ce95623f38bfb118e9741857524ff0c2fe5350d66544bd8c721b6bbe39f97'
 
   url "https://github.com/jhen0409/react-native-debugger/releases/download/v#{version}/rn-debugger-macos-x64.zip"
   appcast 'https://github.com/jhen0409/react-native-debugger/releases.atom',
-          checkpoint: 'cf25e5bbe4e11ba4bc11f31cd8a02b4ea47e6b68d5288d2fc3b2329b53e9e915'
+          checkpoint: 'ccb776a266856c26e31f854fcad293b17ad441beb03cc6ae7b421228a71adc3f'
   name 'React Native Debugger'
   homepage 'https://github.com/jhen0409/react-native-debugger'
 

@@ -1,10 +1,10 @@
 cask 'nix' do
-  version '1.11.9'
-  sha256 'ad2f1d7b2058883ae5835905a9cb69ec69ec54bf6ddf39e0d8f1ae0ac0f7743f'
+  version '1.11.13'
+  sha256 '54376012e8d6825560602015719fb31e19ca66c17ea0919bb1f6455a9d972115'
 
   url "https://nixos.org/releases/nix/nix-#{version}/nix-#{version}-x86_64-darwin.tar.bz2"
   appcast 'https://nixos.org/releases/nix/latest/',
-          checkpoint: '193b91caaced29a00326bf2ad4878eb626ae72fa09a89b646eeadb8dff6273d3'
+          checkpoint: 'e156d4dfa377a5e52805fe3cb9ae42bd49e64dbf65f396406be2ba880fff82c3'
   name 'nix'
   homepage 'https://nixos.org/nix/'
 
@@ -29,9 +29,9 @@ cask 'nix' do
 
   uninstall delete: '/nix'
 
-  zap delete: [
-                '~/.nix-channels',
-                '~/.nix-defexpr',
-                '~/.nix-profile',
-              ]
+  zap trash: [
+               '~/.nix-channels',
+               '~/.nix-defexpr',
+               '~/.nix-profile',
+             ]
 end

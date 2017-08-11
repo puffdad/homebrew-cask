@@ -1,10 +1,10 @@
 cask 'aria2gui' do
-  version '1.3.6'
-  sha256 '789c28ccb8f9f09e0618c437485b63e390b7d0b289ce37d6d71b253daf571d12'
+  version '1.3.8'
+  sha256 '34cf93dd67ac61dda5ab2cba76c60caa7e004c88244b30c2a77cbe3c2e96809c'
 
   url "https://github.com/yangshun1029/aria2gui/releases/download/#{version}/Aria2GUI-v#{version}.zip"
   appcast 'https://github.com/yangshun1029/aria2gui/releases.atom',
-          checkpoint: '857f8649c18697d34035a317dffada3b132b308630edb00e75b1d7eab5fb7442'
+          checkpoint: '7b0c901e232a7cbf8ff6c426a81aa1258b0c400c5e237d2eb33e48fa47c48c6e'
   name 'Aria2GUI'
   homepage 'https://github.com/yangshun1029/aria2gui'
 

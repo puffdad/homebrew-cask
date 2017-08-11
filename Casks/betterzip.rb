@@ -1,12 +1,14 @@
 cask 'betterzip' do
-  version '3.2.1'
-  sha256 'd3d7536fef9958792b05f712c03e35205460d8d86767fd706806fbc92172b074'
+  version '4.0.1'
+  sha256 'd86d356efe3299d3ede725cd9821c8f3a36a791a8910aefc1c316b2aa4b1ba55'
 
   url "https://macitbetter.com/dl/BetterZip-#{version}.zip"
   appcast "https://macitbetter.com/BetterZip#{version.major}.rss",
-          checkpoint: '9749780b36e704e5865f8671406c14a937644daf0efc5023ff05e49b95f39c48'
+          checkpoint: '3e463b0687c09b97515c0a492a33ede27a69ead8436604665b5c35ebc00d54a2'
   name 'BetterZip'
   homepage 'https://macitbetter.com/'
+
+  auto_updates true
 
   app 'BetterZip.app'
 

@@ -1,10 +1,10 @@
 cask 'wireshark-chmodbpf' do
-  version '2.2.6'
-  sha256 'efe30c1729543ae95ce22ad89d41251fee94e38d3d72a4f7a2a25e86a8bc66fe'
+  version '2.4.0'
+  sha256 '20c2e5fa8ec302fc47100ad42f8d2020e629a72b75a7343929206d3274bd08b2'
 
   url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}%20Intel%2064.dmg"
   appcast 'https://www.wireshark.org/download/osx/',
-          checkpoint: 'd355630c719be209a86c1eb2e74d57bc85549366fac1cdd6180ae0c72772e9c3'
+          checkpoint: '0645b35f9985b5ccd49a2d59603dbd57efeaadbd71439dc9cfe8271798d61e0d'
   name 'Wireshark-ChmodBPF'
   homepage 'https://www.wireshark.org/'
 
@@ -53,8 +53,8 @@ cask 'wireshark-chmodbpf' do
                    sudo: true
   end
 
-  uninstall pkgutil: 'org.wireshark.ChmodBPF.pkg',
-            delete:  '/Library/LaunchDaemons/org.wireshark.ChmodBPF.plist'
+  uninstall pkgutil:   'org.wireshark.ChmodBPF.pkg',
+            launchctl: 'org.wireshark.ChmodBPF'
 
   caveats do
     <<-EOS.undent

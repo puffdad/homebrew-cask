@@ -1,27 +1,29 @@
 cask 'gogland' do
   # Gogland is EAP only for now
-  version '1.0,171.3780.106'
-  sha256 '6b700b1437304e1e58ea3d1f866b2b3545cc83642bcc9a727887f9e0c998a097'
+  version '1.0 EAP,172.3757.2'
+  sha256 'f0d1ec8f11500daa4e202e6b2125d63519f1c57de3ca44fca9a5af7574037aa0'
 
   url "https://download.jetbrains.com/go/gogland-#{version.after_comma}.dmg"
   appcast 'https://data.services.jetbrains.com/products/releases?code=GO&latest=true&type=eap',
-          checkpoint: 'ab45225047d94c87872bf592b51a028157c187dd71cd96b828c4d01917ba321e'
+          checkpoint: '7cb5bc3cb5755625309952dfdbcee8be88ee385dc644d09360852a9967c69328'
   name 'Gogland'
   name 'Gogland EAP'
   homepage 'https://www.jetbrains.com/go/'
 
   auto_updates true
 
-  app "Gogland #{version.before_comma} EAP.app"
+  app "Gogland #{version.before_comma}.app"
 
   uninstall_postflight do
-    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'Gogland') }.each { |path| File.delete(path) if File.exist?(path) }
+    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'Gogland') }.each { |path| File.delete(path) if File.exist?(path) && File.readlines(path).grep(%r{# see com.intellij.idea.SocketLock for the server side of this interface}).any? }
   end
 
   zap delete: [
-                "~/Library/Preferences/Gogland#{version.major_minor}",
-                "~/Library/Application Support/Gogland#{version.major_minor}",
                 "~/Library/Caches/Gogland#{version.major_minor}",
                 "~/Library/Logs/Gogland#{version.major_minor}",
+              ],
+      trash:  [
+                "~/Library/Preferences/Gogland#{version.major_minor}",
+                "~/Library/Application Support/Gogland#{version.major_minor}",
               ]
 end

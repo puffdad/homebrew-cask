@@ -5,9 +5,9 @@ cask 'gramps' do
   # github.com/gramps-project/gramps was verified as official when first introduced to the cask
   url "https://github.com/gramps-project/gramps/releases/download/v#{version.major_minor_patch}/Gramps-Intel-#{version}.dmg"
   appcast 'https://github.com/gramps-project/gramps/releases.atom',
-          checkpoint: '98778e06cbb65bc14cc4f42ad301a9ef0f711f729a2ad5d4ae6492dac7a50ec9'
+          checkpoint: '602bb379cf541c40cbc5abd0d1a2b9aafdb731354b4f38b32fdddaa06b1c6a60'
   name 'Gramps'
-  homepage 'https://gramps-project.org/'
+  homepage 'https://gramps-project.org/introduction-WP/'
 
   app 'Gramps.app'
 end

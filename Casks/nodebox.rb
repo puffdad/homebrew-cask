@@ -1,10 +1,10 @@
 cask 'nodebox' do
-  version '3.0.45'
-  sha256 '076c35226af46fc3a5c99488cef642cd857c4a7c32ce23ac7b2ea2ee5e8a687d'
+  version '3.0.47'
+  sha256 '5ecff567f031fea456e2b8dc3eae3f23e29160cda4623dd048e18e5860d54d3b'
 
   url "https://secure.nodebox.net/downloads/NodeBox-#{version}.zip"
   appcast 'https://www.nodebox.net/node/release-notes.html',
-          checkpoint: '6294533c26f1851752ebdc9eef6d637d241dacac9f4b83cd06d989c6991d3230'
+          checkpoint: '3611b14bb85d5c4ecd914bb5b03eb9b38ad7225b524b3a63f26913b1cfc2217b'
   name 'NodeBox'
   homepage 'https://www.nodebox.net/node/'
 

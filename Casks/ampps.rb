@@ -1,10 +1,10 @@
 cask 'ampps' do
-  version '3.6'
-  sha256 'e266be32a1b6206c95fd75c405451a53aee4319c1f62641cdb58e2f2dc809e94'
+  version '3.7'
+  sha256 '62270b36bb45c9f6ec56e338e654c5a41b067a877d7c1f0b67e0af80ae37dd07'
 
   url "http://files.ampps.com/AMPPS-#{version}.dmg"
   name 'AMPPS'
-  homepage 'http://www.ampps.com/'
+  homepage 'https://www.ampps.com/'
 
   suite 'AMPPS'
 

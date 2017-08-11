@@ -20,13 +20,11 @@ cask 'daisydisk' do
 
   app 'DaisyDisk.app'
 
-  postflight do
-    suppress_move_to_applications
-  end
+  uninstall delete:    '/Library/PrivilegedHelperTools/com.daisydiskapp.DaisyDiskAdminHelper',
+            launchctl: 'com.daisydiskapp.DaisyDiskAdminHelper'
 
-  zap delete: [
-                '/Library/LaunchDaemons/com.daisydiskapp.DaisyDiskAdminHelper.plist',
-                '/Library/PrivilegedHelperTools/com.daisydiskapp.DaisyDiskAdminHelper',
+  zap delete: '~/Library/Caches/com.daisydiskapp.DaisyDiskStandAlone',
+      trash:  [
                 '~/Library/Application Support/DaisyDisk',
                 '~/Library/Preferences/com.daisydiskapp.DaisyDiskStandAlone.plist',
               ]

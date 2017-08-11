@@ -1,18 +1,21 @@
 cask 'expandrive' do
-  version '5.4.6'
-  sha256 'b2335cf10b9b3d8fa578ab6a90bd03d1f8aaf0149d83d1ce6092b73e9b199275'
+  version '6.0.14'
+  sha256 '6a1a6e6545bdcef5c5c9bf7d4f94c8b9cb07995f0f5f49b88b99740ba997c1c8'
 
   url "https://updates.expandrive.com/apps/expandrive/v/#{version.dots_to_hyphens}/download.dmg"
-  appcast 'https://updates.expandrive.com/appcast/expandrive.xml?version=3',
-          checkpoint: 'a825a9dfa334b3065953739b8ecb4faf648e733950eed3af7360b2196bd2705a'
+  appcast 'https://updates.expandrive.com/appcast/expandrive.xml',
+          checkpoint: '5ef57ba7165a2afc67ab96fd08e68aed3a2a90a273fa717b887c0c34040b2ca7'
   name 'ExpanDrive'
   homepage 'https://www.expandrive.com/apps/expandrive/'
 
   app 'ExpanDrive.app'
 
-  zap delete: [
-                '~/Library/Application Support/ExpanDrive',
-                '~/Library/Preferences/com.expandrive.ExpanDrive2.plist',
-                '~/Library/Preferences/com.expandrive.ExpanDrive3.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/ExpanDrive',
+               '~/Library/Preferences/com.expandrive.exfs.plist',
+               '~/Library/Preferences/com.expandrive.ExpanDrive.plist',
+               '~/Library/Preferences/com.expandrive.ExpanDrive2.plist',
+               '~/Library/Preferences/com.expandrive.ExpanDrive3.plist',
+               '~/Library/Preferences/com.expandrive.ExpanDrive.helper.plist',
+             ]
 end

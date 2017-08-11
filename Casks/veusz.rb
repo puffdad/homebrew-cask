@@ -1,12 +1,13 @@
 cask 'veusz' do
-  version '1.25.1'
-  sha256 '38d4144babf3a07845b018af610cdf4b21a951a9b7c200c904509dbbe1d2b7a7'
+  version '1.26.1'
+  sha256 '429c5c7d54786f891627afc6dee081ef5c3b1729326d52be51dc5f8751b87179'
 
-  url "http://download.gna.org/veusz/Binaries-AppleOSX/veusz-#{version}-AppleOSX.dmg"
-  appcast 'http://download.gna.org/veusz/Binaries-AppleOSX/',
-          checkpoint: '7dcefe5737e3e8cbd0134289588e301755e351bc8db898e543c762ab8e01c972'
+  # github.com/veusz/veusz was verified as official when first introduced to the cask
+  url "https://github.com/veusz/veusz/releases/download/veusz-#{version}/veusz-#{version}-AppleOSX.dmg"
+  appcast 'https://github.com/veusz/veusz/releases.atom',
+          checkpoint: '5d9d82696b1f7ee4c09aed03db7a6b4e72752bbfb2bf02db9a1c2ed57d22d030'
   name 'Veusz'
-  homepage 'http://home.gna.org/veusz/'
+  homepage 'https://veusz.github.io/'
 
   app 'Veusz.app'
 end

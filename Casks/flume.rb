@@ -1,6 +1,6 @@
 cask 'flume' do
-  version '2.6'
-  sha256 '92eb0180efca10d39420bb74856d3c743af9bea3dabc46dd80b25221127838ef'
+  version '2.7'
+  sha256 '77eb2de6f83dd9f2ee5e1e5a5dd84adf00c67555e54558ef186c16a2dc9ccc14'
 
   url "https://flumeapp.com/files/Flume-#{version}.zip"
   appcast 'https://rink.hockeyapp.net/api/2/apps/b91fcb22f1ac5013dad6ffde2dca7c79',
@@ -12,5 +12,5 @@ cask 'flume' do
 
   app 'Flume.app'
 
-  zap delete: '~/Library/Application Support/Flume'
+  zap trash: '~/Library/Application Support/Flume'
 end

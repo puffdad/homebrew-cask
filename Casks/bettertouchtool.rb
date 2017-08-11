@@ -14,11 +14,11 @@ cask 'bettertouchtool' do
     sha256 '41013cfeffee286a038363651db3dd315ff3a1e0cf07774d9ce852111be50a5a'
     url "https://bettertouchtool.net/releases/btt#{version}_final_10_9.zip"
   else
-    version '2.08'
-    sha256 '21cd1a326402706c1f53e1b7b4081623619b2613f5ec5989813425fe4bb192b2'
+    version '2.270'
+    sha256 '8ec6e0c2e197c0e0dfebedd48930505fcfbe89e2068a42fc15a57bdc49343e69'
     url "https://bettertouchtool.net/releases/btt#{version}.zip"
     appcast 'https://updates.bettertouchtool.net/appcast.xml',
-            checkpoint: '720ffbe4b74a5efd17fd4f80e56e44d5f4f2314d7bd0521a31a132abbe9ca904'
+            checkpoint: '8d78d6d00b2cb231c0c436247ba9009ae2c67be9c97f710b1102cea61bcfd4c2'
   end
 
   name 'BetterTouchTool'

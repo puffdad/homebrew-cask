@@ -1,13 +1,28 @@
 cask 'numi' do
-  version '3.0b14,90:1478584117'
-  sha256 'a9452e903169d3a735db1af2eb684521ff0828a2f39f1d34acda2c8602762627'
+  version '3.17.1,134:1501511032'
+  sha256 'cbb8fb2e424b593e1b448ecd4eb707f459d1aad71e1fc0c0da0778108c5a296d'
 
   # dl.devmate.com/com.dmitrynikolaev.numi was verified as official when first introduced to the cask
   url "https://dl.devmate.com/com.dmitrynikolaev.numi/#{version.after_comma.before_colon}/#{version.after_colon}/Numi-#{version.after_comma.before_colon}.zip"
   appcast 'http://updates.devmate.com/com.dmitrynikolaev.numi.xml',
-          checkpoint: 'd05068f1767ef5c8bd6ea5435737c347755799881b15ef43a49a2429635fb6ad'
+          checkpoint: '0628e73a0ef4fbfc4564fa6408358eadca3a724266ee26e5969d36488aebe953'
   name 'Numi'
   homepage 'https://numi.io/'
 
+  auto_updates true
+
   app 'Numi.app'
+
+  uninstall launchctl: "com.dmitrynikolaev.numi#{version.major}helper",
+            quit:      'com.dmitrynikolaev.numi'
+
+  zap delete: [
+                '~/Library/Caches/com.crashlytics.data/com.dmitrynikolaev.numi',
+                '~/Library/Caches/com.dmitrynikolaev.numi',
+                '~/Library/Caches/io.fabric.sdk.mac.data/com.dmitrynikolaev.numi',
+              ],
+      trash:  [
+                '~/Library/Application Support/com.dmitrynikolaev.numi',
+                '~/Library/Preferences/com.dmitrynikolaev.numi.plist',
+              ]
 end

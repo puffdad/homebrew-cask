@@ -1,10 +1,10 @@
 cask 'clover-configurator' do
-  version '4.41.1'
-  sha256 'b766115c850e0d3b05d525ec4a8b13938693624d6bd5eb16c1f82ef16e923a8f'
+  version '4.46.0'
+  sha256 'c598487a0f1208299944d8364a3af5bebd5820089be6b41f7ff7eb26d01e31f7'
 
   url 'http://mackie100projects.altervista.org/download-mac.php?version=vibrant'
   appcast 'http://mackie100projects.altervista.org/apps/cloverconf/10.10/update.xml',
-          checkpoint: 'a6b68978dc7d98c6d163fd22ddd185db41cdc56ef1670fb4b892655ae578b5a5'
+          checkpoint: '9f5112308c4db607db5c5ade863270d6b20843a413b7dd98b439b9d086e2f653'
   name 'Clover Configurator'
   homepage 'http://mackie100projects.altervista.org/'
 

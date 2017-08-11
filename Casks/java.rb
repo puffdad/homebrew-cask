@@ -1,6 +1,6 @@
 cask 'java' do
-  version '1.8.0_131-b11,d54c1d3a095b4ff2b6607d096fa80163'
-  sha256 '642aca454e10bea70a36a36f54cc5bac22267de78bf85c2d019b1fefbc023c43'
+  version '1.8.0_144-b01,090f390dda5b47b9b721c7dfaa008135'
+  sha256 '2450b35e10295ccf3fb1596bdea6f8f5670f7200ae3ac592eb6a54cc030cf94b'
 
   java_update = version.sub(%r{.*_(\d+)-.*}, '\1')
   url "http://download.oracle.com/otn-pub/java/jdk/#{version.minor}u#{version.before_comma.split('_').last}/#{version.after_comma}/jdk-#{version.minor}u#{java_update}-macosx-x64.dmg",
@@ -9,8 +9,6 @@ cask 'java' do
                }
   name 'Java Standard Edition Development Kit'
   homepage "https://www.oracle.com/technetwork/java/javase/downloads/jdk#{version.minor}-downloads-2133151.html"
-
-  auto_updates true
 
   pkg "JDK #{version.minor} Update #{java_update}.pkg"
 
@@ -47,6 +45,16 @@ cask 'java' do
     end
   end
 
+  uninstall_preflight do
+    if File.exist?("#{HOMEBREW_PREFIX}/Caskroom/java-jdk-javadoc")
+      system_command 'brew', args: ['cask', 'uninstall', 'java-jdk-javadoc']
+    end
+
+    if File.exist?("#{HOMEBREW_PREFIX}/Caskroom/jce-unlimited-strength-policy")
+      system_command 'brew', args: ['cask', 'uninstall', 'jce-unlimited-strength-policy']
+    end
+  end
+
   uninstall pkgutil:   [
                          "com.oracle.jdk#{version.minor}u#{java_update}",
                          'com.oracle.jre',
@@ -73,9 +81,14 @@ cask 'java' do
                        ].keep_if { |v| !v.nil? }
 
   zap       delete: [
+                      '~/Library/Application Support/Java/',
                       '~/Library/Application Support/Oracle/Java',
                       '~/Library/Caches/com.oracle.java.Java-Updater',
+                      '~/Library/Caches/Oracle.MacJREInstaller',
                       '~/Library/Caches/net.java.openjdk.cmd',
+                      '~/Library/Preferences/com.oracle.java.Java-Updater.plist',
+                      '~/Library/Preferences/com.oracle.java.JavaAppletPlugin.plist',
+                      '~/Library/Preferences/com.oracle.javadeployment.plist',
                     ],
             rmdir:  '~/Library/Application Support/Oracle/'
 

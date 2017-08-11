@@ -1,18 +1,15 @@
 cask 'bbedit' do
-  version '11.6.5'
-  sha256 '2b32db1592802aa1b3cddbe7649b005a892eb2a9d5f760d8708f4eaae80fd914'
+  version '11.6.7'
+  sha256 'cd9dfd6513269f9f46a8031e713513a3590ae04330bcb049946b72c174bc2137'
 
-  url "http://pine.barebones.com/files/BBEdit_#{version}.dmg"
+  # s3.amazonaws.com/BBSW-download was verified as official when first introduced to the cask
+  url "http://s3.amazonaws.com/BBSW-download/BBEdit_#{version}.dmg"
   appcast 'https://versioncheck.barebones.com/BBEdit.xml',
-          checkpoint: 'adcd1cda2c27210d9d75b1a83706c5b388a50347cdaf2677582572a5c0d151cf'
+          checkpoint: 'a6fcea1acefa6b99c3d85a60db86a57afb924d0e3b9d94bf87a2589dfeb7c9a8'
   name 'BBEdit'
   homepage 'https://www.barebones.com/products/bbedit/'
 
   depends_on macos: '>= :mavericks'
 
   app 'BBEdit.app'
-
-  postflight do
-    suppress_move_to_applications
-  end
 end
