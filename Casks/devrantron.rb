@@ -1,11 +1,11 @@
 cask 'devrantron' do
-  version '1.2.2'
-  sha256 'e3e9d547aa241241e10aeac09b3a52bdecbf71e17bcd62b99c4ca3760723300f'
+  version '1.5.4'
+  sha256 '0f8ff90fe170f66932d1f044a33501c3e600729c15d0eeafe128b6e7c15757c1'
 
   # github.com/tahnik/devRantron was verified as official when first introduced to the cask
   url "https://github.com/tahnik/devRantron/releases/download/v#{version}/devrantron-#{version}.dmg"
   appcast 'https://github.com/tahnik/devRantron/releases.atom',
-          checkpoint: '34c31502b21c9bd226c9c768888521926fadae673e11099d49d42c28cc246c42'
+          checkpoint: '4689266365a4f84e78dd1fbb667117684485e85f9d4ef82428ef77e1db88bd48'
   name 'devRantron'
   homepage 'https://devrantron.firebaseapp.com/'
 
@@ -17,10 +17,10 @@ cask 'devrantron' do
                           ['TERM', 'de.zerotask.theclassic.helper'],
                         ]
 
-  zap delete: '~/Library/Saved Application State/de.zerotask.theclassic.savedState',
-      trash:  [
-                '~/Library/Application Support/devrantron',
-                '~/Library/Preferences/de.zerotask.theclassic.helper.plist',
-                '~/Library/Preferences/de.zerotask.theclassic.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/devrantron',
+               '~/Library/Preferences/de.zerotask.theclassic.helper.plist',
+               '~/Library/Preferences/de.zerotask.theclassic.plist',
+               '~/Library/Saved Application State/de.zerotask.theclassic.savedState',
+             ]
 end

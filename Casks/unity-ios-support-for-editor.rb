@@ -1,8 +1,8 @@
 cask 'unity-ios-support-for-editor' do
-  version '2017.1.0f3,472613c02cf7'
-  sha256 '5f8086e93688c20c619acc6c4297a3c7a0484c485b495fb668c132307cf45e36'
+  version '2018.1.0f2,d4d99f31acba'
+  sha256 'd92a030e233b6efe18569488094985a2e2082c1b6785bfef49c197eda9908095'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
+  url "https://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity iOS Build Support'
   homepage 'https://unity3d.com/unity/'
 

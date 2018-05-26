@@ -1,12 +1,13 @@
 cask 'liteide' do
-  version '32.2'
-  sha256 'e879e227e29503d6af16101031fb0039fb56688366b608b4b5c520fbfe0441d4'
+  version '33.3,5.9.5'
+  sha256 '0d8c86fe72f5583797932664943ad09f4af3785cbfab224a052b01735ee1007c'
 
-  url "https://github.com/visualfc/liteide/releases/download/x#{version}/liteidex#{version}.macosx-qt5.zip"
+  # github.com/visualfc/liteide was verified as official when first introduced to the cask
+  url "https://github.com/visualfc/liteide/releases/download/x#{version.before_comma}/liteidex#{version.before_comma}.macosx-qt#{version.after_comma}.zip"
   appcast 'https://github.com/visualfc/liteide/releases.atom',
-          checkpoint: 'bebcfa57d03a1dc5a101bc57f6a4c449157dbc84d550bd85165e6c21c2505fb6'
+          checkpoint: 'ed5ec42ee9567478e224a13ad303ab12c9232a286f44a05dbf7b02c025bec8fe'
   name 'LiteIDE'
-  homepage 'https://github.com/visualfc/liteide'
+  homepage 'http://liteide.org/'
 
   app 'liteide/LiteIDE.app'
 end

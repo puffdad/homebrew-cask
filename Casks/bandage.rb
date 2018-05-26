@@ -10,4 +10,14 @@ cask 'bandage' do
   homepage 'https://rrwick.github.io/Bandage/'
 
   app 'Bandage.app'
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/bandage.wrapper.sh"
+  binary shimscript, target: 'bandage'
+
+  preflight do
+    IO.write shimscript, <<~EOS
+      #!/bin/sh
+      exec '#{appdir}/Bandage.app/Contents/MacOS/Bandage' "$@"
+    EOS
+  end
 end

@@ -10,9 +10,12 @@ cask 'electron-api-demos' do
 
   app 'Electron API Demos.app'
 
-  zap delete: [
-                '~/Library/Application Support/Electron API Demos',
-                '~/Library/Caches/com.electron.electron-api-demos',
-                '~/Library/Saved Application State/com.electron.electron-api-demos.savedState',
-              ]
+  zap trash: [
+               '~/Library/Application Support/Electron API Demos',
+               '~/Library/Caches/com.electron.electron-api-demos',
+               '~/Library/Caches/com.electron.electron-api-demos.ShipIt',
+               '~/Library/Preferences/com.electron.electron-api-demos.helper.plist',
+               '~/Library/Preferences/com.electron.electron-api-demos.plist',
+               '~/Library/Saved Application State/com.electron.electron-api-demos.savedState',
+             ]
 end

@@ -1,11 +1,16 @@
 cask 'hammerspoon' do
-  version '0.9.55'
-  sha256 'c4b494f3ca6c1254564b04399114016b483424571c763b26c4c775f5b185fe18'
+  if MacOS.version <= :mavericks
+    version '0.9.46'
+    sha256 '20f7e81624b6f007d6fdd8944cab3d9ba48c36fd0b4f1405a590526b5d4859bc'
+  else
+    version '0.9.66'
+    sha256 '573e923dc5f12f0b6af7a164568c95e432f2d80398a454e6a4e813270d9bc8af'
+  end
 
   # github.com/Hammerspoon/hammerspoon was verified as official when first introduced to the cask
   url "https://github.com/Hammerspoon/hammerspoon/releases/download/#{version}/Hammerspoon-#{version}.zip"
   appcast 'https://github.com/Hammerspoon/hammerspoon/releases.atom',
-          checkpoint: '0e19eefbacf22da1012a91c3347c6be9bd51cc639c9edbe235a31a6154964b66'
+          checkpoint: 'de373165de7e377f26d43cb6acea29dec849f78e75458b11ba81afa7e4415d45'
   name 'Hammerspoon'
   homepage 'http://www.hammerspoon.org/'
 
@@ -17,11 +22,11 @@ cask 'hammerspoon' do
   uninstall quit:       'org.hammerspoon.Hammerspoon',
             login_item: 'Hammerspoon'
 
-  zap delete: [
-                '~/.hammerspoon',
-                '~/Library/Application Support/com.crashlytics/org.hammerspoon.Hammerspoon',
-                '~/Library/Caches/org.hammerspoon.Hammerspoon',
-                '~/Library/Preferences/org.hammerspoon.Hammerspoon.plist',
-                '~/Library/Saved Application State/org.hammerspoon.Hammerspoon.savedState',
-              ]
+  zap trash: [
+               '~/.hammerspoon',
+               '~/Library/Application Support/com.crashlytics/org.hammerspoon.Hammerspoon',
+               '~/Library/Caches/org.hammerspoon.Hammerspoon',
+               '~/Library/Preferences/org.hammerspoon.Hammerspoon.plist',
+               '~/Library/Saved Application State/org.hammerspoon.Hammerspoon.savedState',
+             ]
 end

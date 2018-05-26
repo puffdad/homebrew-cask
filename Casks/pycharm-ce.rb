@@ -1,10 +1,10 @@
 cask 'pycharm-ce' do
-  version '2017.2.1,172.3544.46'
-  sha256 '913b9718f0ea4d42275c499bb007702e72a50d00740c659cb2635ee5b34d9877'
+  version '2018.1.3,181.4892.64'
+  sha256 '60dfc72ecd9d607d41145b865943994af1e7636a4402222cbef868c5185efe14'
 
   url "https://download.jetbrains.com/python/pycharm-community-#{version.before_comma}.dmg"
   appcast 'https://data.services.jetbrains.com/products/releases?code=PCC&latest=true&type=release',
-          checkpoint: 'b9d7ad93baaddea3d21e1bbc12c460464bc96c0cca3ff6c9ba8c83896c6249aa'
+          checkpoint: 'bb08e783980a805032d20f1105aaa4d4299e49636c80823cbda5f6fb6ce44823'
   name 'Jetbrains PyCharm Community Edition'
   name 'PyCharm CE'
   homepage 'https://www.jetbrains.com/pycharm/'
@@ -17,16 +17,14 @@ cask 'pycharm-ce' do
     ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'charm') }.each { |path| File.delete(path) if File.exist?(path) && File.readlines(path).grep(%r{# see com.intellij.idea.SocketLock for the server side of this interface}).any? }
   end
 
-  zap delete: [
-                "~/Library/Caches/PyCharmCE#{version.major_minor}",
-                "~/Library/Caches/PyCharm#{version.major_minor}",
-                "~/Library/Logs/PyCharm#{version.major_minor}",
-                "~/Library/Logs/PyCharmCE#{version.major_minor}",
-                '~/Library/Saved Application State/com.jetbrains.pycharm.savedState',
-              ],
-      trash:  [
-                "~/Library/Application Support/PyCharm#{version.major_minor}",
-                "~/Library/Preferences/PyCharm#{version.major_minor}",
-                "~/Library/Preferences/PyCharmCE#{version.major_minor}",
-              ]
+  zap trash: [
+               "~/Library/Application Support/PyCharm#{version.major_minor}",
+               "~/Library/Caches/PyCharmCE#{version.major_minor}",
+               "~/Library/Caches/PyCharm#{version.major_minor}",
+               "~/Library/Logs/PyCharm#{version.major_minor}",
+               "~/Library/Logs/PyCharmCE#{version.major_minor}",
+               "~/Library/Preferences/PyCharm#{version.major_minor}",
+               "~/Library/Preferences/PyCharmCE#{version.major_minor}",
+               '~/Library/Saved Application State/com.jetbrains.pycharm.savedState',
+             ]
 end

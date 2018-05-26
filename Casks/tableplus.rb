@@ -1,10 +1,11 @@
 cask 'tableplus' do
-  version '1.0'
-  sha256 'ca5655445c2f4674eda66fd1833a9f8dedb80937073b0b4a204100e7f2b21fe5'
+  version '1.0,107'
+  sha256 '838aebae1f4e24611c916b4b25c9b7b7c517674177c13a4354d9b6d844616ca3'
 
-  url 'https://tableplus.io/release/osx/tableplus_latest.zip'
+  # s3.amazonaws.com/tableplus-osx-builds was verified as official when first introduced to the cask
+  url "https://s3.amazonaws.com/tableplus-osx-builds/#{version.after_comma}/TablePlus.zip"
   appcast 'https://tableplus.io/osx/version.xml',
-          checkpoint: 'ce45c6d4a38e7b1a4af6e1f0960117ccf8191a41b41dc5db5ad1a898f3748b3c'
+          checkpoint: '2fa8534b1d63a0fe26db71ea1fc59cb752a72bd5682385a92ac84ab4cd5f9da5'
   name 'TablePlus'
   homepage 'https://tableplus.io/'
 
@@ -12,10 +13,10 @@ cask 'tableplus' do
 
   app 'TablePlus.app'
 
-  zap delete: [
-                '~/Library/Application Support/com.tinyapp.TablePlus',
-                '~/Library/Caches/com.tinyapp.TablePlus',
-                '~/Library/Cookies/com.tinyapp.TablePlus.binarycookies',
-                '~/Library/Preferences/com.tinyapp.TablePlus.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/com.tinyapp.TablePlus',
+               '~/Library/Caches/com.tinyapp.TablePlus',
+               '~/Library/Cookies/com.tinyapp.TablePlus.binarycookies',
+               '~/Library/Preferences/com.tinyapp.TablePlus.plist',
+             ]
 end

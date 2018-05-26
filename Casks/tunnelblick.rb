@@ -1,13 +1,14 @@
 cask 'tunnelblick' do
-  version '3.7.1b,4813'
-  sha256 '60419937cb72ebe59d40e13a80c4e5c31231a7c5fb8f3affbcbc95b9b41295b1'
+  version '3.7.5a,5011'
+  sha256 '1da1c1c7c7380f74b8674bb1a094296dd384d49871856b7477a0948852657167'
 
   # github.com/Tunnelblick/Tunnelblick/releases/download was verified as official when first introduced to the cask
   url "https://github.com/Tunnelblick/Tunnelblick/releases/download/v#{version.before_comma}/Tunnelblick_#{version.before_comma}_build_#{version.after_comma}.dmg"
   appcast 'https://github.com/Tunnelblick/Tunnelblick/releases.atom',
-          checkpoint: '3c9e0b74a61accb3e6188708cbd2738f460531b0e2a616a8cb96cacfd894e1c2'
+          checkpoint: '621b15a521b4a4d9a6a7692314c81f20498725b17c1a238ce95896b260b75f1c'
   name 'Tunnelblick'
   homepage 'https://www.tunnelblick.net/'
+  gpg "#{url}.asc", key_id: '76df975a1c5642774fb09868ff5fd80e6bb9367e'
 
   auto_updates true
 
@@ -23,17 +24,16 @@ cask 'tunnelblick' do
                        ],
             quit:      'net.tunnelblick.tunnelblick'
 
-  zap delete: [
-                '~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/net.tunnelblick.tunnelblick.help',
-                '~/Library/Caches/net.tunnelblick.tunnelblick',
-              ],
-      trash:  [
-                '/Library/Application Support/Tunnelblick',
-                '~/Library/Application Support/Tunnelblick',
-                '~/Library/Preferences/net.tunnelblick.tunnelblick.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/Tunnelblick',
+               '~/Library/Caches/net.tunnelblick.tunnelblick',
+               '~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/Tunnelblick*',
+               '~/Library/Cookies/net.tunnelblick.tunnelblick.binarycookies',
+               '~/Library/Preferences/net.tunnelblick.tunnelblick.plist',
+               '/Library/Application Support/Tunnelblick',
+             ]
 
-  caveats <<-EOS.undent
+  caveats <<~EOS
     For security reasons, #{token} must be installed to /Applications,
     and will request to be moved at launch.
   EOS

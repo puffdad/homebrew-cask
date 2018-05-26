@@ -1,11 +1,11 @@
 cask 'sabnzbd' do
-  version '2.1.0'
-  sha256 'f86f532f1bca5cd34fca5f3c44a00b95101e2c0f018198c0e9c8f8a23ebfdfa4'
+  version '2.3.3'
+  sha256 '77a51dcbf96928597463739cffd5f0b0c3f89a42250699cdd3f85712d5bcdaaa'
 
   # github.com/sabnzbd/sabnzbd was verified as official when first introduced to the cask
   url "https://github.com/sabnzbd/sabnzbd/releases/download/#{version}/SABnzbd-#{version}-osx.dmg"
   appcast 'https://github.com/sabnzbd/sabnzbd/releases.atom',
-          checkpoint: 'fff864fbd45b3e6d563cb446e727823e4b628c1b2b057a9c79da6eff1679ee84'
+          checkpoint: '84faf317bbf795deab4de9968f880031b2af1ca9be442a4522587275119e2f2a'
   name 'SABnzbd'
   homepage 'https://sabnzbd.org/'
 
@@ -13,5 +13,5 @@ cask 'sabnzbd' do
 
   app 'SABnzbd.app'
 
-  zap delete: '~/Library/Application Support/SABnzbd'
+  zap trash: '~/Library/Application Support/SABnzbd'
 end

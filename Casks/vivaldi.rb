@@ -1,10 +1,10 @@
 cask 'vivaldi' do
-  version '1.11.917.39'
-  sha256 'be7ac805771bb55aa00b93d0a305c38cd6d8e1dab3d77c66356c1229ecbc5d66'
+  version '1.15.1147.42'
+  sha256 '1d3822090f39f5633bb9832630fb261f94cf466d93fcfcd6dcc8d5811047bb9e'
 
   url "https://downloads.vivaldi.com/stable/Vivaldi.#{version}.dmg"
-  appcast 'https://update.vivaldi.com/update/1.0/mac/appcast.xml',
-          checkpoint: '6d5575165b5e53dbd5adde1699801739e5b980edf4868232f7189abdde414d9e'
+  appcast 'https://update.vivaldi.com/update/1.0/public/mac/appcast.xml',
+          checkpoint: '018e6ff011f1a9ca55be5824d51d4a3051ed8411897044f3f29632fc6d52f19d'
   name 'Vivaldi'
   homepage 'https://vivaldi.com/'
 
@@ -12,11 +12,11 @@ cask 'vivaldi' do
 
   app 'Vivaldi.app'
 
-  zap delete: [
-                '~/Library/Preferences/com.vivaldi.Vivaldi.plist',
-                '~/Library/Application Support/Vivaldi',
-                '~/Library/Caches/Vivaldi',
-                '~/Library/Caches/com.vivaldi.Vivaldi',
-                '~/Library/Saved Application State/com.vivaldi.Vivaldi.savedState',
-              ]
+  zap trash: [
+               '~/Library/Application Support/Vivaldi',
+               '~/Library/Caches/Vivaldi',
+               '~/Library/Caches/com.vivaldi.Vivaldi',
+               '~/Library/Preferences/com.vivaldi.Vivaldi.plist',
+               '~/Library/Saved Application State/com.vivaldi.Vivaldi.savedState',
+             ]
 end

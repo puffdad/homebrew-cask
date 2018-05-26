@@ -1,10 +1,10 @@
 cask 'softu2f' do
-  version '0.0.13'
-  sha256 '94b226aa26439e2fc418d51529cffd510e7a3ee768b50948bdbfc9b70e7bda48'
+  version '0.0.15'
+  sha256 '94994b1fcd214cb046faecdd4d741b8f66bdc0a1f1cc91b60ff4705c451a5902'
 
   url "https://github.com/github/SoftU2F/releases/download/#{version}/SoftU2F.pkg"
   appcast 'https://github.com/github/SoftU2F/releases.atom',
-          checkpoint: '2b02c008438e95878370d136846a4c1642b5a33a3e40bf843c18c986d846add9'
+          checkpoint: '65d225a0d705c9a8f8adfd0e059a0e0c5792ebbaeb4e2e6803342432168250cf'
   name 'Soft U2F'
   homepage 'https://github.com/github/SoftU2F'
 

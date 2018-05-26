@@ -1,10 +1,10 @@
 cask '4k-video-to-mp3' do
-  version '2.3.2.843'
-  sha256 'dd90007d3307bb175afbfd1b2dae075d92cefff9ce3fbd156ca4fe9de709e5cb'
+  version '2.4.0.863'
+  sha256 '55ace78c0400b015eca916dfbafa91489e01044abcfaf0dde6c21799f94a7ff4'
 
-  url "https://downloads2.4kdownload.com/app/4kvideotomp3_#{version.major_minor}.dmg"
+  url "https://dl.4kdownload.com/app/4kvideotomp3_#{version.major_minor_patch}.dmg"
   appcast 'https://www.4kdownload.com/download',
-          checkpoint: '49ff507a887439ff101f36b84c58788834a7a4a7638127609c8a49fa6278b627'
+          checkpoint: 'bcc9ec5479e3d7db1f10175083eb4c73dd6590b8bfe3cab26f6d78efbbc4c583'
   name '4K Video to MP3'
   homepage 'https://www.4kdownload.com/products/product-videotomp3'
 

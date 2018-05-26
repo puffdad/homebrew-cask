@@ -1,10 +1,10 @@
 cask 'aseprite' do
-  version '1.2-beta12'
-  sha256 'f142d30ea43cd4ac0c176e400b109627a772df48b54a3b4aa884567c93063ff0'
+  version '1.2.8'
+  sha256 '0c128dd104fb76eb5417e9666310847cc601ee4bee0280a67a28eba18a121ae1'
 
   url "https://www.aseprite.org/downloads/trial/Aseprite-v#{version}-trial-MacOSX.dmg"
   appcast 'https://github.com/aseprite/aseprite/releases.atom',
-          checkpoint: '60400a94b1700388239158950876e996e451f45bf9c362ea331e9bab193d6888'
+          checkpoint: '3a1c7080c2b1704fbc2f06130a3fdbf5961d1bd536c2f618ff84847b646d3c46'
   name 'Aseprite'
   homepage 'https://www.aseprite.org/'
 

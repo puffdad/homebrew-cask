@@ -1,11 +1,11 @@
 cask 'flash-player-debugger-ppapi' do
-  version '26.0.0.151'
-  sha256 '11edfe8fd8b1ce2fdcef76ea051d7fe6b2d39f4ae2d0185f6be538861340c773'
+  version '29.0.0.171'
+  sha256 'd9126d1b0854b2ec5250d57acc750934aa1188030beb3da40965fc71f3ef391d'
 
   # macromedia.com was verified as official when first introduced to the cask
   url "https://fpdownload.macromedia.com/pub/flashplayer/updaters/#{version.major}/flashplayer_#{version.major}_ppapi_debug.dmg"
   appcast 'http://fpdownload2.macromedia.com/get/flashplayer/update/current/xml/version_en_mac_pep.xml',
-          checkpoint: '918f08ed443fe8c1da41ed988a4c80208063c10994a52b6b01322c410a86e6c9'
+          checkpoint: 'a8b1088272513abecdf52195eed55c7e5247ec8bc82de741c3aa1060099220be'
   name 'Adobe Flash Player PPAPI (plugin for Opera and chromium) content debugger'
   homepage 'https://www.adobe.com/support/flashplayer/debug_downloads.html'
 
@@ -14,8 +14,8 @@ cask 'flash-player-debugger-ppapi' do
   uninstall pkgutil: 'com.adobe.pkg.PepperFlashPlayer',
             delete:  '/Library/Internet Plug-Ins/PepperFlashPlayer'
 
-  zap       delete: [
-                      '~/Library/Caches/Adobe/Flash Player',
-                      '~/Library/Logs/FlashPlayerInstallManager.log',
-                    ]
+  zap trash: [
+               '~/Library/Caches/Adobe/Flash Player',
+               '~/Library/Logs/FlashPlayerInstallManager.log',
+             ]
 end

@@ -1,20 +1,21 @@
 cask 'upterm' do
-  version '0.3.1'
-  sha256 '6b1b0f9e868e6993dbbbd13a0c32357b4a68a68384ffb8eb10bb6d58f92a01ef'
+  version '0.4.3'
+  sha256 'b4121a9a5f38b605b779f50ca2963732c3a2935793c4787346dc7940e3f1e7da'
 
   url "https://github.com/railsware/upterm/releases/download/v#{version}/upterm-#{version}-macOS.dmg"
   appcast 'https://github.com/railsware/upterm/releases.atom',
-          checkpoint: '147e5ad1609afd1e9d8b8bcc47bd76b4400efb4d7d90100595c1a7346b89fa3c'
+          checkpoint: '84f681f88d2bd60baf5ce8c0549f3477803c1f5e128c6968bf825bac85bdc930'
   name 'Upterm'
   homepage 'https://github.com/railsware/upterm'
 
   app 'Upterm.app'
 
-  zap delete: [
-                '~/Library/Application Support/Upterm',
-                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.railsware.upterm.sfl',
-                '~/Library/Preferences/com.github.railsware.upterm.helper.plist',
-                '~/Library/Preferences/com.github.railsware.upterm.plist',
-                '~/Library/Saved Application State/com.github.railsware.upterm.savedState',
-              ]
+  zap trash: [
+               '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.railsware.upterm.sfl*',
+               '~/Library/Application Support/Upterm',
+               '~/Library/Preferences/com.github.railsware.upterm.helper.plist',
+               '~/Library/Preferences/com.github.railsware.upterm.plist',
+               '~/Library/Saved Application State/com.github.railsware.upterm.savedState',
+               '~/.upterm',
+             ]
 end

@@ -1,20 +1,20 @@
 cask 'burp-suite' do
-  version '1.7.26'
-  sha256 '859b1625e411c58b6b6d64f8e7516bc74449849ceddc082622f8cfa4ddffe36d'
+  version '1.7.33'
+  sha256 '2d272773154e28140753ad4065666e1ecafdf63cf3c5b097d23b7d6ad1e1560f'
 
-  url "https://portswigger.net/burp/releases/download?product=free&version=#{version}&type=macosx"
-  appcast 'https://portswigger.net/burp/freereleasesarchive',
-          checkpoint: '6dbcb76fdab04c8abbf115d2416993b0a274a6d1a0195701c9673a36341706e7'
+  url "https://portswigger.net/burp/releases/download?product=community&version=#{version}&type=macosx"
+  appcast 'https://portswigger.net/burp/releasesarchive/community',
+          checkpoint: '529da11d2f6281ca726587301c011f17c7fc213db29170dbd4dfd6e84ace27a5'
   name 'Burp Suite'
   homepage 'https://portswigger.net/burp/'
 
   installer script: {
-                      executable: 'Burp Suite Free Edition Installer.app/Contents/MacOS/JavaApplicationStub',
+                      executable: 'Burp Suite Community Edition Installer.app/Contents/MacOS/JavaApplicationStub',
                       args:       ['-q'],
                       sudo:       true,
                     }
 
-  uninstall delete: '/Applications/Burp Suite Free Edition.app'
+  uninstall delete: '/Applications/Burp Suite Community Edition.app'
 
   zap trash: '~/.BurpSuite'
 end

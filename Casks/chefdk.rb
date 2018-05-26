@@ -1,26 +1,20 @@
 cask 'chefdk' do
-  if MacOS.version == :mountain_lion
-    version '0.11.2-1'
-    sha256 '56899eab322cacac7f445a24d3159af34fccb5910642f4535eff4ee47321fe56'
-  else
-    version '2.0.28-1'
-    sha256 'c9e576c09f40a519c73887598409c3bb6d8611378bfd8858f081c4701c0ae309'
-  end
+  version '3.0.36'
+  sha256 'fb641d694a7545949df2fd6e94a53b5da4b6085b60ac9f742ef8d3079fd0c8e4'
 
-  url "https://packages.chef.io/stable/mac_os_x/#{MacOS.version}/chefdk-#{version}.dmg"
+  url "https://packages.chef.io/files/stable/chefdk/#{version}/mac_os_x/10.13/chefdk-#{version}-1.dmg"
   appcast "https://www.chef.io/chef/metadata-chefdk?p=mac_os_x&pv=#{MacOS.version}&m=x86_64&v=latest&prerelease=false",
-          checkpoint: '0f0f5f7eb2921d75761cf1a8c47fe3887164ecaa19b6fdeff8517b5e9790fe45'
+          checkpoint: 'ee66291c945a890f9c5c79cef3e2de9280615d98dfaef080fe77d1e66bad522b'
   name 'Chef Development Kit'
   name 'ChefDK'
   homepage 'https://downloads.chef.io/chefdk'
 
-  depends_on macos: '>= :mountain_lion'
+  depends_on macos: '>= :el_capitan'
 
-  pkg "chefdk-#{version}.pkg"
+  pkg "chefdk-#{version}-1.pkg"
 
-  # When updating this cask, please verify the list of paths to delete (and
-  # add to it if necessary):
-  #  find /usr/local/bin -lname '/opt/chefdk/*'
+  # When updating this cask, please verify the list of paths to delete and correct it if necessary:
+  #   find /usr/local/bin -lname '/opt/chefdk/*' | sed -E "s/^(.*)$/'\1',/"
   # (Source: https://docs.chef.io/install_dk.html#mac-os-x)
   uninstall pkgutil: 'com.getchef.pkg.chefdk',
             delete:  [
@@ -43,8 +37,7 @@ cask 'chefdk' do
                        '/usr/local/bin/push-apply',
                        '/usr/local/bin/pushy-client',
                        '/usr/local/bin/pushy-service-manager',
-                       '/usr/local/bin/rubocop',
                      ]
 
-  zap delete: '~/.chefdk/'
+  zap trash: '~/.chefdk/'
 end

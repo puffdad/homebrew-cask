@@ -1,11 +1,11 @@
 cask 'go-agent' do
-  version '17.7.0-5147'
-  sha256 'd94731c867b678c9fc4b51ce7ddf60fa5e3474fe36d67fd15604f146689806af'
+  version '18.5.0-6679'
+  sha256 'ebabafdbfc3396d36d1c8c8f26650a946ee5f175f00b89c856a5e127a2db2bcd'
 
   # download.gocd.io/binaries was verified as official when first introduced to the cask
   url "https://download.gocd.io/binaries/#{version}/osx/go-agent-#{version}-osx.zip"
   appcast 'https://github.com/gocd/gocd/releases.atom',
-          checkpoint: 'f1cba4692ca4f0878fd95f276a55c43a4c2a435a96eae547070ac430689e19f1'
+          checkpoint: 'c53e6d95ddaf9a7d3a51b82011f8348a7f9e81ff702b088a885f5f58291a8113'
   name 'Go Agent'
   homepage 'https://www.gocd.org/'
 

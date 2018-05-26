@@ -1,10 +1,10 @@
 cask 'forklift' do
-  version '3.0.6'
-  sha256 'c2755a0538a8d9facf04af721368eab8bbb8b1568adf5b5132c7f78b7c1b36bd'
+  version '3.2.2'
+  sha256 '7f968b7d4b1c2be100f7ac26e7d9f3d2b93f109ac1edf5eb6dfab70041e2d277'
 
-  url "http://download.binarynights.com/ForkLift#{version}.zip"
+  url "https://download.binarynights.com/ForkLift#{version}.zip"
   appcast "https://updates.binarynights.com/ForkLift#{version.major}/update.xml",
-          checkpoint: '04cc308dec0dd16770e9c327f3ead161934af8a4241fb69c499aedc4db3f0e3e'
+          checkpoint: 'd79464fa356c95d097c4530778e324c411dedf81b921fc06cd38d4ddfbbeeb53'
   name 'ForkLift'
   homepage 'https://binarynights.com/forklift/'
 
@@ -13,15 +13,24 @@ cask 'forklift' do
 
   app 'ForkLift.app'
 
-  zap delete: [
-                '/Library/LaunchDaemons/com.binarynights.ForkLiftHelper.plist',
-                '/Library/PrivilegedHelperTools/com.binarynights.ForkLiftHelper',
-                '~/Library/Application Support/ForkLift',
-                '~/Library/Caches/com.binarynights.ForkLift-3',
-                '~/Library/Cookies/com.binarynights.ForkLift-3.binarycookies',
-                '~/Library/Logs/ForkLift',
-                '~/Library/Preferences/com.binarynights.ForkLift-3.plist',
-                '~/Library/Preferences/com.binarynights.ForkLiftMini.plist',
-                '~/Library/Saved Application State/com.binarynights.ForkLift-3.savedState',
-              ]
+  uninstall delete:    '/Library/PrivilegedHelperTools/com.binarynights.ForkLiftHelper',
+            launchctl: [
+                         'com.binarynights.ForkLiftHelper',
+                         'com.binarynights.ForkLiftMini',
+                       ],
+            quit:      [
+                         "com.binarynights.ForkLift-#{version.major}",
+                         'com.binarynights.ForkLiftMini',
+                       ]
+
+  zap trash: [
+               '~/Library/Application Support/ForkLift',
+               "~/Library/Caches/com.binarynights.ForkLift-#{version.major}",
+               "~/Library/Cookies/com.binarynights.ForkLift-#{version.major}.binarycookies",
+               '~/Library/Logs/ForkLift',
+               '~/Library/Logs/ForkLiftMini',
+               "~/Library/Preferences/com.binarynights.ForkLift-#{version.major}.plist",
+               '~/Library/Preferences/com.binarynights.ForkLiftMini.plist',
+               "~/Library/Saved Application State/com.binarynights.ForkLift-#{version.major}.savedState",
+             ]
 end

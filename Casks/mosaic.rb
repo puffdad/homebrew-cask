@@ -1,12 +1,14 @@
 cask 'mosaic' do
-  version '1.0.7'
-  sha256 '310a3554a31e04a4a337fe343b9bf4e01850161ec28e8c7fc3e5a8c187fbb89e'
+  version '1.0.10'
+  sha256 'eae92c55c5c1b3ddfab4be6541ead5846919a057f1fbc0811c624ff27f2ac544'
 
-  url 'http://www.lightpillar.com/appdata/mosaic/Mosaic.zip'
+  url "http://lightpillar.com/appdata/mosaic/archive/Mosaic_#{version.dots_to_underscores}.pkg"
   appcast 'http://lightpillar.com/appdata/mosaic/features/version-history.html',
-          checkpoint: 'bed0519ce94b3bcaeff59679ee8595dc028685097d164e044cf8077ded5ad6f4'
+          checkpoint: '641c0a190fa1eae54acfc0ed7f8f0eec8f4357a7f4cd373dbaa7a58892f6ad13'
   name 'Mosaic'
   homepage 'https://lightpillar.com/mosaic.html'
 
-  app 'Mosaic.app'
+  pkg "Mosaic_#{version.dots_to_underscores}.pkg"
+
+  uninstall pkgutil: 'com.btinternet.pkg.Mosaic'
 end

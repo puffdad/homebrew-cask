@@ -1,10 +1,10 @@
 cask 'peakhour' do
-  version '4.0.2'
-  sha256 'bf62bc3b6e3cb4e8681be70451bf3ec219ed80557b3b1b921629bfb568105d5d'
+  version '4.0.10,32937'
+  sha256 '3cec20bdb569697c04cd658b454928e756e37aa1a17f5ec2a0b2262da752d538'
 
-  url "https://updates.peakhourapp.com/releases/PeakHour%20#{version}.zip"
+  url "https://updates.peakhourapp.com/releases/PeakHour%20#{version.before_comma}.zip"
   appcast "https://updates.peakhourapp.com/PeakHour#{version.major}Appcast.xml",
-          checkpoint: '2374b834f4b403db314beca2448e6ec9ade501b53b91001658245b7decf13f84'
+          checkpoint: '0aff3787868237167a016a9bfdd7c1a014e7f63525637830985787216c81966c'
   name 'PeakHour'
   homepage 'https://www.peakhourapp.com/'
 
@@ -13,16 +13,14 @@ cask 'peakhour' do
   uninstall launchctl: "com.digitician.peakhour#{version.major}.launchAtLoginHelper",
             quit:      "com.digitician.peakhour#{version.major}"
 
-  zap delete: [
-                "~/Library/Application Scripts/com.digitician.peakhour#{version.major}.launchAtLoginHelper",
-                "~/Library/Caches/com.digitician.peakhour#{version.major}",
-                "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.digitician.peakhour#{version.major}",
-                "~/Library/Containers/com.digitician.peakhour#{version.major}.launchAtLoginHelper",
-                "~/Library/Cookies/com.digitician.peakhour#{version.major}.binarycookies",
-              ],
-      trash:  [
-                "~/Library/Application Support/com.digitician.peakhour#{version.major}",
-                '~/Library/Application Support/PeakHour*',
-                "~/Library/Preferences/com.digitician.peakhour#{version.major}.plist",
-              ]
+  zap trash: [
+               "~/Library/Application Scripts/com.digitician.peakhour#{version.major}.launchAtLoginHelper",
+               "~/Library/Application Support/com.digitician.peakhour#{version.major}",
+               '~/Library/Application Support/PeakHour*',
+               "~/Library/Caches/com.digitician.peakhour#{version.major}",
+               "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.digitician.peakhour#{version.major}",
+               "~/Library/Containers/com.digitician.peakhour#{version.major}.launchAtLoginHelper",
+               "~/Library/Cookies/com.digitician.peakhour#{version.major}.binarycookies",
+               "~/Library/Preferences/com.digitician.peakhour#{version.major}.plist",
+             ]
 end

@@ -1,99 +1,102 @@
 cask 'torbrowser' do
-  version '7.0.4'
+  version '7.5.4'
 
   language 'ar' do
-    sha256 '29cc23fa342155c7f8b13e5a544b2dd67939c6025d65b2ae68d1b6e6b000c501'
+    sha256 '062cf091cb34a0bd6c8d95e82b38f3ca8dd3980127d4a73ce12915878f10be59'
     'ar'
   end
 
   language 'de' do
-    sha256 '71a85cabdef2da8ffbb8dff5820e323096acdda6dececd16055d7daa395fc160'
+    sha256 'b94de2cb5af970b7bae3c61efc81a392eaea92a3a824fe46f52e956ac91af6c7'
     'de'
   end
 
   language 'en', default: true do
-    sha256 '0a227d179cdd1096c877f9836097eb38ed554fbae6657753a72690a183e2766d'
+    sha256 '298cd494d144ae6ec30922e0b1800ecb5f7bff75ea654b9b32b38bec52d927a9'
     'en-US'
   end
 
   language 'es' do
-    sha256 '69f00ba14b042124591dd71680b262a66ec41a93cb9ddf3bf5dc8a217951a62b'
+    sha256 '4409e646893cbfc9f05d5a0c85a912c32ae87c6abc8e0b2b9dec09e50b35db68'
     'es-ES'
   end
 
   language 'fa' do
-    sha256 'd77c01a7bef3615ed8bd86f934290002ace7e01798e9def0119c24702ecc89b1'
+    sha256 'aa1569f2f090f0cae2608e8e0e72a16852ae09fd0f66679d348041820ebe3ce1'
     'fa'
   end
 
   language 'fr' do
-    sha256 'f8dd193f1f7d62d07964a4ee78b5ed5ace93d1b4d43d9f6d5a5041e022de0e83'
+    sha256 'e0d94bdd9c302f8af920462330d457aed9f4554b788227b6f37e011f91bcf6cc'
     'fr'
   end
 
   language 'it' do
-    sha256 '042b8bf4c01e062ec63d578e96e00a2f25aeb070c9189f18b5f9a65833a0ffb4'
+    sha256 'f28aa6b07d6e1ced13ac356b3930645a20e4324b8b435b6d9b1ef43e14893a69'
     'it'
   end
 
   language 'ja' do
-    sha256 '6221a1301707a26babe9a924ab7a1b41deccab339bb3e7a7f55bdc8e83eef5cd'
+    sha256 '5ea6b09ad0aa5f5241ae4e3e209e15fc3445fd96f56e8cb61f107105123d7425'
     'ja'
   end
 
   language 'ko' do
-    sha256 '80d7b66a3fa680eea4c0ef930bf81b0baafd1445ddbc135f337df927d5537f73'
+    sha256 'd0285a3ee7704736e7cec33982b62dfeb7bc8cc196e91bb2b21172a220444939'
     'ko'
   end
 
   language 'nl' do
-    sha256 '04c23af2be12c48db8e264ca431a86957f8679cfdd886c6f22aaae1474df122d'
+    sha256 '157f9f665d355a36491ce6134273fc24565f1eaf771e47bb6fa4f2b82928d2a7'
     'nl'
   end
 
   language 'pl' do
-    sha256 '7db9f5212c34f2eb1b28efaca717f6e4817247dfa4a1251316a46fd00af7bc65'
+    sha256 '21e856c5327b66248ea25a8977bc247ed1d4b6fc660c2194aae755eb1468ea86'
     'pl'
   end
 
   language 'pt' do
-    sha256 'de1ce6dec1b53268fb552607ef9784433403d1b6102f176075e14b2ba35e937c'
+    sha256 'f58009d34eb152329b84f0828d77f4e5a93e6fd73263bf83a2898a522b2482fc'
     'pt-BR'
   end
 
   language 'ru' do
-    sha256 'f8b5e98def0fb22c3efe94642fd3b0cd72dd4bd92e349e9d57cd642caf784a11'
+    sha256 '9beeeba0de384e372d74a91ba55214555f03f0930f70d29825c1c94c3516ff3d'
     'ru'
   end
 
   language 'tr' do
-    sha256 'b66b149a3f305d5d5b8abfb859512a61f85eabdeb77545fbc3a9db515bb49c9c'
+    sha256 '03abb9b979d6d08f7cf3df6e3a767aaeb35103c9330bcd482b12d4e9f5124b76'
     'tr'
   end
 
   language 'vi' do
-    sha256 '0d3764a33344d2e901c66d8d92679cb0bf6520087602df39962e34e0d611c83a'
+    sha256 '505702858977c336f50b4f3da7dddc54362bb2a6e0cc9f2abfa075f445c0d0d4'
     'vi'
   end
 
   language 'zh' do
-    sha256 '3926f60959b89bd99aa7e39e17988e5671b95921751e245c0c78a0c8c7296547'
+    sha256 'b6d2b3bb5c95247e17919a7ee2e5030e8f526a88266b05aa9b90d4d9b1c2311c'
     'zh-CN'
   end
 
   url "https://dist.torproject.org/torbrowser/#{version}/TorBrowser-#{version}-osx64_#{language}.dmg"
+  appcast 'https://dist.torproject.org/torbrowser/',
+          checkpoint: '821b5e99ab6c6d95bc1a226bcb63fe153787ff864c19f6b8a807259f5a5941c4'
   name 'Tor Browser'
   homepage 'https://www.torproject.org/projects/torbrowser.html'
   gpg "#{url}.asc", key_id: 'ef6e286dda85ea2a4ba7de684e2c6e8793298290'
 
   auto_updates true
+  conflicts_with cask: 'torbrowser-alpha'
 
   app 'TorBrowser.app'
 
-  zap delete: '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.mozilla.tor browser.sfl',
-      trash:  [
-                '~/Library/Application Support/TorBrowser-Data',
-                '~/Library/Preferences/org.mozilla.tor browser.plist',
-                '~/Library/Preferences/org.torproject.torbrowser.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/TorBrowser-Data',
+               '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.mozilla.tor browser.sfl*',
+               '~/Library/Preferences/org.mozilla.tor browser.plist',
+               '~/Library/Preferences/org.torproject.torbrowser.plist',
+             ]
 end

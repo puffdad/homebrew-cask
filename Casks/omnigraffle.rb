@@ -1,24 +1,12 @@
 cask 'omnigraffle' do
-  if MacOS.version <= :snow_leopard
-    version '5.4.4'
-    sha256 '7bcc64093f46bd4808b1a4cb86cf90c0380a5c5ffffd55ce8f742712818558df'
-    url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.6/OmniGraffle-#{version}.dmg"
-  elsif MacOS.version <= :mavericks
-    version '6.0.5'
-    sha256 'a2eff19909d1ba38a4f01b2beecbde2f31f4af43d30e06d2c6921ae8880f85bc'
-    url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.8/OmniGraffle-#{version}.dmg"
-  elsif MacOS.version <= :yosemite
-    version '6.6.1'
-    sha256 '7671d46ccd0b53a5917b0ccba5971fe1f1d7990b2d636f25c941b11b03c6e23c'
-    url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.10/OmniGraffle-#{version}.dmg"
-  else
-    version '7.4.1'
-    sha256 '20a007d5bf6c5074194a208cdc09b9f8be82d05921f1fd0947d2bc9bff2a67ec'
-    url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.11/OmniGraffle-#{version}.dmg"
-  end
+  version '7.7.1'
+  sha256 '0ddf72859b3ded2a251d57ffc1b01cc23fa361c2ccbe2438e807ed6238d4a51d'
 
+  url "https://downloads.omnigroup.com/software/MacOSX/10.12/OmniGraffle-#{version}.dmg"
   name 'OmniGraffle'
   homepage 'https://www.omnigroup.com/omnigraffle/'
+
+  depends_on macos: '>= :sierra'
 
   app 'OmniGraffle.app'
 
